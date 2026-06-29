@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>Morek DLM Hub montavimo gidas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="../index.html">EV Įkroviklių Gidai</a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Morek</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="about guide-section">
+    <div class="container">
+      <h2>Morek DLM Hub montavimo gidas</h2>
+      <p>
+        DLM (Dynamic Load Management) Hub naudojamas dinamiškai paskirstyti galią
+        tarp kelių Morek stotelių ir / arba riboti bendrą objekto apkrovą.
+      </p>
+
+      <!-- DLM Hub nuotrauka -->
+      <img src="https://s3-eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/204003566684/original/2_buCADDM4_hHylz6DsRDyctzRJWtjSgNQ.png?1741608423" alt="Morek DLM Hub įrenginys" class="guide-image">
+      <div class="guide-image-caption">1 pav. Morek DLM Hub.</div>
+
+      <h3>1. DLM Hub montavimo vieta</h3>
+      <ol>
+        <li>DLM Hub paprastai montuojamas elektros skydelyje ant DIN bėgio.</li>
+        <li>Pasirinkite vietą su pakankamu vietos kiekiu kabeliams ir geru pasiekiamumu aptarnavimui.</li>
+        <li>Įsitikinkite, kad aplinkos sąlygos atitinka įrenginio specifikacijas.</li>
+      </ol>
+
+
+      <h3>2. Maitinimo pajungimas</h3>
+      <ol>
+        <li>Prijunkite maitinimo gnybtus pagal Morek schemą (pvz. 230 V AC maitinimas, jei to reikalauja modelis).</li>
+        <li>Naudokite atskirą apsaugą (automatinį jungiklį) DLM Hub maitinimui, jei tai numatyta projekte.</li>
+      </ol>
+
+      <h3>3. Ryšio su stotelėmis pajungimas</h3>
+      <!-- schema/nuotrauka su RS-485 / Ethernet jungtimis -->
+      <img src="https://s3-eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/204004130526/original/jrgxL99zfohDzTAP9l6WMLcEeAv1A4ZAQw.png?1742841888" alt="DLM Hub ryšio gnybtai" class="guide-image">
+      <div class="guide-image-caption">3 pav. DLM Hub ryšio gnybtai / prievadai.</div>
+
+      <ol>
+        <li>Nutieskite ryšio kabelį (pvz. RS-485) tarp DLM Hub ir kiekvienos Morek stotelės (master–slave topologija).</li>
+        <li>Prijunkite A/B linijas prie atitinkamų gnybtų tiek DLM Hub, tiek stotelėse.</li>
+        <li>Jei reikia, įjunkite linijos terminaciją paskutinėje grandinės vietoje.</li>
+      </ol>
+
+      <h3>4. Ryšys su išmaniu skaitikliu (jei naudojamas)</h3>
+      <!-- nuotrauka su skaitiklio / srovės transformatorių pajungimu -->
+      <img src="https://s3-eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/204004130526/original/jrgxL99zfohDzTAP9l6WMLcEeAv1A4ZAQw.png?1742841888" alt="DLM Hub jungtis su išmaniu skaitikliu" class="guide-image">
+      <div class="guide-image-caption">4 pav. DLM Hub jungtis su energijos skaitikliu.</div>
+
+      <ol>
+        <li>Prijunkite skaitiklio matavimo išėjimus prie DLM Hub matavimo / komunikacijos gnybtų.</li>
+        <li>Patikrinkite polaritetą ir atitikimą Morek pateiktai schemai.</li>
+      </ol>
+
+      <h3>5. Konfigūravimo pagrindai</h3>
+      <ol>
+        <li>Įjunkite DLM Hub maitinimą.</li>
+        <li>Prie DLM Hub arba per stotelės sąsają nustatykite:
+          <ul>
+            <li>bendros įvado galios limitą,</li>
+            <li>kiek stotelių dalyvauja DLM,</li>
+            <li>prioritetus (jei numatyta).</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p><a href="index.html">← Grįžti į Morek gidų sąrašą</a></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        © <span id="year"></span> EV Įkroviklių Gidai
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
