@@ -232,3 +232,58 @@ body {
     align-items: flex-start;
   }
 }
+/* Gidų (dokumentacijos) stilius */
+.guide-section h2,
+.guide-section h3 {
+  margin-top: 1.5rem;
+}
+
+.guide-section h2:first-child,
+.guide-section h3:first-child {
+  margin-top: 0;
+}
+
+.guide-section p {
+  line-height: 1.6;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.guide-section ol,
+.guide-section ul {
+  margin: 0.3rem 0 0.9rem 1.4rem;
+}
+
+.guide-section li {
+  margin-bottom: 0.25rem;
+}
+
+/* Paveikslėliams giduose */
+.guide-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.08);
+  margin: 0.75rem auto 1.25rem;
+}
+
+.guide-image-caption {
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-align: center;
+  margin-top: -0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Jei reikia kelių paveikslėlių vienoje eilėje */
+.guide-image-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.guide-image-row img {
+  flex: 1 1 220px;
+}
