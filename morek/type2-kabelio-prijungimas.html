@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>Morek – Type 2 kabelio prijungimo gidas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="../index.html">EV Įkroviklių Gidai</a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Morek</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="about guide-section">
+    <div class="container">
+      <h2>Type 2 kabelio prijungimas prie Morek AC stotelės</h2>
+      <p>
+        Šis gidas aprašo, kaip prijungti Type 2 įkrovimo kabelį prie Morek AC
+        išmanios stotelės (kabelinė versija). Viskas daroma laikantis Morek
+        rekomendacijų ir oficialių schemų.
+      </p>
+
+      <!-- Type 2 kabelio nuotrauka -->
+      <img src="https://s3-eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/204000663734/original/LrBmZYyI_EFCz9vdtWjQm20PnjkTgyLAKw.png?1732261167" alt="Type 2 įkrovimo kabelis" class="guide-image">
+      <div class="guide-image-caption">1 pav. Type 2 įkrovimo kabelis.</div>
+
+      <h3>1. Kabelio paruošimas</h3>
+      <ol>
+        <li>Įsitikinkite, kad kabelio ilgis ir skerspjūvis atitinka stotelės galią.</li>
+        <li>Nuimkite išorinę izoliaciją nuo kabelio galo, kuris bus jungiamas į stotelę.</li>
+        <li>Atskirkite laidininkus (fazės, nulis, PE, valdymo laidai – CP, PP, jei naudojami).</li>
+      </ol>
+
+      <h3>2. Gnybtų prijungimas stotelės viduje</h3>
+      <!-- nuotrauka su stotelės vidumi ir Type 2 gnybtais -->
+      <img src="https://s3-eu-central-1.amazonaws.com/euc-cdn.freshdesk.com/data/helpdesk/attachments/production/204000663733/original/IJwgSglvy0nD6wGLjD_e0vNIjrfVhyA3Ng.png?1732261166" alt="Type 2 kabelio gnybtai stotelės viduje" class="guide-image">
+      <div class="guide-image-caption">3 pav. Type 2 kabelio pajungimo gnybtai stotelėje.</div>
+
+      <ol>
+        <li>Atidarykite stotelės korpusą pagal gamintojo nurodymus.</li>
+        <li>Perkiškite Type 2 kabelį per pritaikytą įvadą / rievę ir užveržkite kabelio laikiklį.</li>
+        <li>Prijunkite:
+          <ul>
+            <li>fazės laidininkus (L1/ L2/ L3) prie atitinkamų gnybtų,</li>
+            <li>nulį (N) – prie N gnybto,</li>
+            <li>įžeminimą (PE) – prie PE gnybto,</li>
+            <li>valdymo laidus (CP, PP) – prie valdymo gnybtų pagal Morek schemą.</li>
+          </ul>
+        </li>
+        <li>Patikrinkite, ar nėra perspaustų ar laisvų laidų.</li>
+      </ol>
+
+      <h3>3. Fiksavimas ir testavimas</h3>
+      <!-- nuotrauka su uždarytu korpusu ir išvestu Type 2 kabeliu -->
+      <img src="IMG_URL_T2_FINISHED" alt="Sumontuotas Type 2 kabelis stotelėje" class="guide-image">
+      <div class="guide-image-caption">4 pav. Galutinis Type 2 kabelio prijungimo rezultatas.</div>
+
+      <ol>
+        <li>Uždarykite stotelės korpusą ir užfiksuokite dangtį.</li>
+        <li>Patikrinkite, ar kabelis tvirtai laikosi ir nesulinkęs per daug staigiai.</li>
+        <li>Atlikite bandomąjį įkrovimą, patikrinkite, ar stotelė atpažįsta prijungtą kabelį ir EV.</li>
+      </ol>
+
+      <p><a href="index.html">← Grįžti į Morek gidų sąrašą</a></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        © <span id="year"></span> EV Įkroviklių Gidai
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
