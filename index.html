@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Charger Installation Guides</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Link our CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top navigation / header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="index.html">EV Charger Guides</a>
+      </div>
+      <nav class="main-nav">
+        <a href="#brands">Brands</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero section / banner -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>EV Charger Installation Guides</h1>
+        <p>
+          Step-by-step installation instructions for popular EV charger brands:
+          Morek, ABB, Vool, NexBlue and Elinta.
+        </p>
+        <a href="#brands" class="btn-primary">Choose a brand</a>
+      </div>
+      <div class="hero-side">
+        <!-- You can later add an image here if you want -->
+        <div class="hero-box">
+          <h2>For Installers & Electricians</h2>
+          <p>
+            Clear, practical instructions, wiring diagrams and configuration
+            tips to make installations faster and safer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand cards (similar layout idea to ikrautas.lt services) -->
+  <section id="brands" class="brands">
+    <div class="container">
+      <h2>Choose a brand</h2>
+      <p class="section-intro">
+        Select a manufacturer to see model-specific installation guides.
+      </p>
+
+      <div class="card-grid">
+        <!-- Morek -->
+        <a href="morek/index.html" class="card">
+          <h3>Morek</h3>
+          <p>Installation and configuration guides for Morek EV chargers.</p>
+          <span class="card-link">View guides →</span>
+        </a>
+
+        <!-- ABB -->
+        <a href="abb/index.html" class="card">
+          <h3>ABB</h3>
+          <p>Step-by-step instructions for ABB wallboxes and EV charging stations.</p>
+          <span class="card-link">View guides →</span>
+        </a>
+
+        <!-- Vool -->
+        <a href="vool/index.html" class="card">
+          <h3>Vool</h3>
+          <p>Guides for Vool home and commercial chargers.</p>
+          <span class="card-link">View guides →</span>
+        </a>
+
+        <!-- NexBlue -->
+        <a href="nexblue/index.html" class="card">
+          <h3>NexBlue</h3>
+          <p>Installation steps and configuration help for NexBlue chargers.</p>
+          <span class="card-link">View guides →</span>
+        </a>
+
+        <!-- Elinta -->
+        <a href="elinta/index.html" class="card">
+          <h3>Elinta</h3>
+          <p>Wiring, setup and commissioning guides for Elinta EV chargers.</p>
+          <span class="card-link">View guides →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About this site</h2>
+      <p>
+        This site collects practical installation guides for widely used EV
+        charging equipment. It is intended for qualified electricians and
+        installers. Always follow local regulations and the official
+        documentation from the manufacturer.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact / footer section -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h3>Contact</h3>
+        <p>
+          If you see any errors in the guides or want to suggest improvements,
+          please open an issue in the GitHub repository.
+        </p>
+      </div>
+      <div class="footer-copy">
+        © <span id="year"></span> EV Charger Guides
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
