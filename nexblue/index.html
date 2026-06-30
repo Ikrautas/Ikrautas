@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>NexBlue – stotelės ir dinaminio valdiklio gidai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .scenario-card {
+      background-color: #ffffff;
+      border-radius: 0.75rem;
+      padding: 1.2rem 1.2rem 1rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 3px 8px rgba(15, 23, 42, 0.06);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    }
+    .scenario-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.14);
+      border-color: #c7d2fe;
+    }
+    .scenario-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.35rem;
+      font-size: 1.05rem;
+    }
+    .scenario-card p {
+      margin: 0 0 0.6rem;
+      color: #4b5563;
+      font-size: 0.9rem;
+    }
+    .scenario-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background-color: #eff6ff;
+      color: #1d4ed8;
+      margin-bottom: 0.5rem;
+    }
+    .scenario-link {
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">EV Įkroviklių Gidai</a>
+    </div>
+    <nav class="main-nav">
+      <a href="../index.html#brands">Gamintojai</a>
+    </nav>
+  </div>
+</header>
+
+<section class="about guide-section">
+  <div class="container">
+    <h2>NexBlue – stotelės ir dinaminio galios valdiklio gidai</h2>
+    <p>
+      Čia rasite NexBlue AC stotelės montavimo, konfigūravimo ir dinaminio
+      galios valdiklio (DLM) diegimo bei nustatymo gidus. Struktūra paremta
+      pateiktu NexBlue PDF (Google Drive nuoroda).
+    </p>
+
+    <h3>Pasirinkite gidą</h3>
+    <div class="scenario-grid">
+      <a href="stoteles-montavimas.html" class="scenario-card">
+        <span class="scenario-tag">Montavimas</span>
+        <h3>NexBlue stotelės montavimo gidas</h3>
+        <p>Mechaninis montavimas, pajungimas prie tinklo ir pirminė patikra.</p>
+        <span class="scenario-link">Atidaryti gidą →</span>
+      </a>
+
+      <a href="stoteles-konfiguravimas.html" class="scenario-card">
+        <span class="scenario-tag">Konfigūracija</span>
+        <h3>NexBlue stotelės konfigūravimo gidas</h3>
+        <p>Prisijungimas prie stotelės, tinklo ir vartotojų nustatymai, galios ribojimas.</p>
+        <span class="scenario-link">Atidaryti gidą →</span>
+      </a>
+
+      <a href="dlm-montavimas-konfiguravimas.html" class="scenario-card">
+        <span class="scenario-tag">DLM</span>
+        <h3>Dinaminio galios valdiklio montavimo ir konfigūravimo gidas</h3>
+        <p>DLM modulio pajungimas, skaitiklių/CT prijungimas ir dinamių ribų nustatymas.</p>
+        <span class="scenario-link">Atidaryti gidą →</span>
+      </a>
+    </div>
+
+    <p><a href="../index.html">← Grįžti į pagrindinį puslapį</a></p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      © <span id="year"></span> EV Įkroviklių Gidai
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
