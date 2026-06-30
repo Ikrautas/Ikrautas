@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>Morek – išmanios stotelės konfigūravimo gidas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="../index.html">EV Įkroviklių Gidai</a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Morek</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="about guide-section">
+    <div class="container">
+      <h2>Išmanios Morek stotelės konfigūravimo gidas</h2>
+      <p>
+        Šiame gide – pagrindiniai žingsniai, kaip sukonfigūruoti Morek AC išmanią
+        stotelę: prisijungti prie jos, nustatyti tinklą, vartotojus ir galios
+        ribojimą. Konkrečios parinktys gali skirtis pagal modelį ir programinės
+        įrangos versiją.
+      </p>
+
+      <!-- nuotrauka su web sąsaja / app -->
+      <img src="IMG_URL_CFG_UI" alt="Morek stotelės konfigūravimo sąsaja" class="guide-image">
+      <div class="guide-image-caption">1 pav. Morek stotelės valdymo sąsaja (pavyzdys).</div>
+
+      <h3>1. Pradinis prisijungimas</h3>
+      <ol>
+        <li>Prijunkite maitinimą ir palaukite, kol stotelė pilnai pasileis.</li>
+        <li>Paleiskite "Morek EV Tool“ programėlę ir leiskite jai naudoti "Bluetooth“.</li>
+        <li>Prisijunkite naudodami numatytus prisijungimo duomenis Serijinis numeris matomas ant stotelės šono turi sutapti su serijiniu esančiu jūsų ekrane, pin kodas paprastai būna :12345678 </li>
+      </ol>
+
+      <h3>2. Tinklo (Network) nustatymai</h3>
+      <!-- nuotrauka su network nustatymų langeliu -->
+      <img src="IMG_URL_CFG_NETWORK" alt="Tinklo nustatymų langas" class="guide-image">
+      <div class="guide-image-caption">2 pav. Tinklo (Network) nustatymų pavyzdys.</div>
+
+      <h3>3. Vartotojų ir autentifikacijos nustatymai</h3>
+      <!-- nuotrauka su vartotojų / RFID sąsaja -->
+      <img src="IMG_URL_CFG_USERS" alt="Vartotojų ir autentifikacijos nustatymai" class="guide-image">
+      <div class="guide-image-caption">3 pav. Vartotojų / RFID valdymas.</div>
+
+      <ol>
+        <li>Pasirinkite, ar įkrovimas leisimas visiems, ar tik autorizuotiems vartotojams (RFID, app ir pan.).</li>
+        <li>Jei naudojami RFID raktai – pridėkite naujus kortelių ID, priskirkite vartotojams.</li>
+        <li>Nustatykite administratoriaus paskyrą ir slaptažodį, jei to dar nepadarėte, pirmą kartą jungiantis prie Morek stoelės su vartotojo programėle, jos slaptažodis 12345.</li>
+      </ol>
+
+      <h3>4. Galios ribojimo ir DLM nustatymai</h3>
+      <!-- nuotrauka su DLM / Power Limit nustatymų ekranu -->
+      <img src="IMG_URL_CFG_POWER" alt="Galios ribojimo nustatymai" class="guide-image">
+      <div class="guide-image-caption">4 pav. Galios ribojimo / DLM nustatymai.</div>
+
+      <ol>
+        <li>Jei stotelė dirba viena – nustatykite maksimalią stotelės srovę (pvz. 16 A, 32 A ir pan.).</li>
+        <li>Jei naudojamas DLM:
+          <ul>
+            <li>Įveskite bendrą įvado galios / srovės limitą.</li>
+            <li>Nustatykite ar ši stotelė yra „master“ ar „slave“.</li>
+            <li>Patikrinkite ryšį su DLM Hub / skaitikliu.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3>5. Ryšys su back-end / OCPP (jei naudojamas)</h3>
+      <!-- nuotrauka su OCPP nustatymų langeliu -->
+      <img src="IMG_URL_CFG_OCPP" alt="OCPP / back-end prisijungimo nustatymai" class="guide-image">
+      <div class="guide-image-caption">5 pav. Ryšio su back-end (OCPP) nustatymai.</div>
+
+      <ol>
+        <li>Įveskite serverio adresą (URL) ir prievadą.</li>
+        <li>Nustatykite Charge Point ID (stotelės identifikatorių).</li>
+        <li>Patikrinkite, ar stotelė sėkmingai prisijungia prie back-end sistemos.</li>
+      </ol>
+
+      <h3>6. Konfigūracijos išsaugojimas ir testavimas</h3>
+      <ol>
+        <li>Išsaugokite atliktus nustatymus ir, jei reikia, perkraukite stotelę.</li>
+        <li>Atlikite bandomą įkrovimą ir stebėkite, ar viskas veikia pagal nustatytą logiką (autentifikacija, ribojimas ir t. t.).</li>
+      </ol>
+
+      <p><a href="index.html">← Grįžti į Morek gidų sąrašą</a></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        © <span id="year"></span> EV Įkroviklių Gidai
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
