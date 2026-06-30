@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>Vool LMC – konfigūravimo gidas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">EV Įkroviklių Gidai</a>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Vool</a>
+    </nav>
+  </div>
+</header>
+
+<section class="about guide-section">
+  <div class="container">
+    <h2>Vool LMC (Load Management Controller) konfigūravimo gidas</h2>
+    <p>
+      Vool LMC naudojamas dinamiškai valdyti apkrovą: riboti įvado srovę ir
+      paskirstyti galią tarp Vool stotelių. Čia – montavimo ir konfigūravimo
+      žingsniai pagal „VOOL stotelės ir LMC diegimas“ Notion gidą.
+    </p>
+
+    <!-- LMC įrenginio nuotrauka -->
+    <img src="IMG_URL_LMC_OVERVIEW" alt="Vool LMC modulis" class="guide-image">
+    <div class="guide-image-caption">1 pav. Vool LMC modulis.</div>
+
+    <h3>1. LMC montavimas skydelyje</h3>
+    <ol>
+      <li>LMC montuojamas <strong>ant DIN bėgio</strong> elektros skydelyje.</li>
+      <li>Pasirinkite vietą su patogiu priėjimu laidų pajungimui.</li>
+      <li>Užfiksuokite LMC ant DIN bėgio (turėtų spragtelėti į vietą).</li>
+    </ol>
+
+    <!-- LMC skydelyje -->
+    <img src="IMG_URL_LMC_IN_PANEL" alt="Vool LMC montavimas skydelyje" class="guide-image">
+    <div class="guide-image-caption">2 pav. LMC montuojamas skydelyje.</div>
+
+    <h3>2. Maitinimo pajungimas LMC</h3>
+    <ol>
+      <li>Prijunkite LMC maitinimą (paprastai 230 V AC) prie nurodytų gnybtų:
+        <ul>
+          <li>L – fazė,</li>
+          <li>N – nulis,</li>
+          <li>PE – įžeminimas (jei numatytas).</li>
+        </ul>
+      </li>
+      <li>Naudokite atskirą automatinį jungiklį (pvz. C6–C10) LMC apsaugai, jei taip nurodyta projekte.</li>
+    </ol>
+
+    <!-- Skaitiklio / CT pajungimas -->
+    <img src="IMG_URL_LMC_METER" alt="LMC ryšys su skaitikliu / CT" class="guide-image">
+    <div class="guide-image-caption">3 pav. LMC ryšys su skaitikliu / srovės transformatoriais.</div>
+
+    <h3>3. Skaitiklio arba CT pajungimas</h3>
+    <ol>
+      <li>Jei LMC jungiamas <strong>prie išmanaus skaitiklio</strong>:
+        <ul>
+          <li>Prijunkite RS-485 / Modbus ryšio liniją (A/B) nuo skaitiklio iki LMC;</li>
+          <li>Laikykitės poliariteto ir gamintojų schemų.</li>
+        </ul>
+      </li>
+      <li>Jei naudojami <strong>srovės transformatoriai (CT)</strong>:
+        <ul>
+          <li>Užkabinkite CT ant fazių (L1, L2, L3),</li>
+          <li>Prijunkite CT antrinę dalį prie LMC nurodytų gnybtų,</li>
+          <li>Patikrinkite srovės kryptį (rodyklės kryptis).</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p style="background-color:#fff3cd; border-left:4px solid #ffc107; padding:1rem; margin:1rem 0; border-radius:0.25rem;">
+      <strong>⚠️ Svarbu!</strong> Netinkama CT kryptis ar klaidingas ryšio pajungimas sukels
+      neteisingus matavimus ir blogą galios ribojimą. Prieš paleidžiant LMC –
+      du kartus patikrinkite schemas.
+    </p>
+
+    <!-- Ryšys su Vool stotelėmis -->
+    <img src="IMG_URL_LMC_TO_VOOL" alt="LMC ryšio kabelis į Vool stoteles" class="guide-image">
+    <div class="guide-image-caption">4 pav. LMC ryšio kabelis į Vool stoteles.</div>
+
+    <h3>4. Ryšys tarp LMC ir Vool stotelių</h3>
+    <ol>
+      <li>Nutieskite <strong>ryšio kabelį</strong> (pvz. RS-485 / Ethernet – pagal Vool LMC tipą) tarp LMC ir Vool stotelių.</li>
+      <li>Jei kelių stotelių sistema – jungimas paprastai:
+        <ul>
+          <li>LMC → Vool #1 → Vool #2 → Vool #3 ir t. t.</li>
+        </ul>
+      </li>
+      <li>Prijunkite prie LMC ir stotelių nurodytų komunikacijos gnybtų.</li>
+      <li>Jei naudojamas RS-485 – paskutinėje grandinės vietoje įjunkite <strong>terminaciją</strong>.</li>
+    </ol>
+
+    <!-- LMC konfigūravimo sąsaja -->
+    <img src="IMG_URL_LMC_UI" alt="Vool LMC konfigūravimo sąsaja" class="guide-image">
+    <div class="guide-image-caption">5 pav. LMC konfigūravimo sąsaja.</div>
+
+    <h3>5. LMC prisijungimas ir pradiniai nustatymai</h3>
+    <ol>
+      <li>Įjunkite LMC maitinimą ir palaukite, kol jis pasileis.</li>
+      <li>Prisijunkite prie LMC konfigūravimo:
+        <ul>
+          <li>per Vool programėlę,</li>
+          <li>arba per web sąsają (žr. tavo Notion instrukcijas).</li>
+        </ul>
+      </li>
+      <li>Patikrinkite, ar LMC mato prijungtą skaitiklį / CT (rodomi srovės / galios duomenys).</li>
+    </ol>
+
+    <!-- LMC įvado galios limitas -->
+    <img src="IMG_URL_LMC_LIMITS" alt="LMC Grid limit nustatymai" class="guide-image">
+    <div class="guide-image-caption">6 pav. Įvado galios limite nustatymai LMC.</div>
+
+    <h3>6. Įvado galios ir ribų nustatymas</h3>
+    <ol>
+      <li>Nustatykite:
+        <ul>
+          <li><strong>Max grid current / Grid limit</strong> – didžiausia srovė, kurią leidžiama naudoti (pvz. įvadinis automatas),</li>
+          <li><strong>Prioritetus</strong> – jei sistema leidžia (kuri stotelė turi pirmenybę).</li>
+        </ul>
+      </li>
+      <li>Jei yra atskiros ribos dienai/nakties tarifams – nustatykite jas pagal poreikį.</li>
+    </ol>
+
+    <!-- Vool stotelių pririšimas LMC -->
+    <img src="IMG_URL_LMC_STATIONS" alt="Vool stotelių sąrašas LMC" class="guide-image">
+    <div class="guide-image-caption">7 pav. Vool stotelių pririšimas prie LMC.</div>
+
+    <h3>7. Vool stotelių pridėjimas LMC sistemoje</h3>
+    <ol>
+      <li>LMC sąsajoje pasirinkite skiltį, kurioje pridedamos stotelės (pvz. <strong>Chargers / Devices</strong>).</li>
+      <li>Pridėkite kiekvieną Vool stotelę:
+        <ul>
+          <li>nustatykite jos vardą / ID,</li>
+          <li>nurodykite, prie kurio fazių bloko ji pajungta (jei reikia).</li>
+        </ul>
+      </li>
+      <li>Patikrinkite, ar visos stotelės rodomos kaip <strong>Online / Connected</strong>.</li>
+    </ol>
+
+    <h3>8. Bandomasis paleidimas</h3>
+    <ol>
+      <li>Įjunkite visas Vool stoteles ir LMC.</li>
+      <li>Prijunkite vieną EV ir pradėkite įkrovimą – stebėkite, ar srovė ir galia teisingai atsispindi LMC.</li>
+      <li>Prijunkite antrą / trečią EV (jei sistema daugia-kanalė) – patikrinkite, ar:
+        <ul>
+          <li>bendra srovė neviršija nustatyto limito,</li>
+          <li>atliktas galios paskirstymas tarp stotelių.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p style="background-color:#d4edda; border-left:4px solid #28a745; padding:1rem; margin:1rem 0; border-radius:0.25rem;">
+      <strong>✓ Sistema paruošta!</strong> Jei bandomasis paleidimas sėkmingas ir neatsiranda klaidų,
+      Vool LMC ir stotelės tinkamai sukonfigūruotos dinamiam galios valdymui.
+    </p>
+
+    <p><a href="index.html">← Grįžti į Vool gidų sąrašą</a></p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      © <span id="year"></span> EV Įkroviklių Gidai
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
