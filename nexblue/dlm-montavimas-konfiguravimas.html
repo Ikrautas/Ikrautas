@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>NexBlue – dinaminio galios valdiklio montavimas ir konfigūravimas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">EV Įkroviklių Gidai</a>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">NexBlue</a>
+    </nav>
+  </div>
+</header>
+
+<section class="about guide-section">
+  <div class="container">
+    <h2>NexBlue dinaminio galios valdiklio (DLM) montavimas ir konfigūravimas</h2>
+    <p>
+      Šis gidas aprašo, kaip sumontuoti ir sukonfigūruoti NexBlue dinaminio
+      galios valdiklį, kad būtų ribojama maksimali pastato apkrova ir valdoma
+      kelių NexBlue stotelių galia.
+    </p>
+
+    <!-- DLM modulio nuotrauka -->
+    <img src="IMG_URL_NEX_DLM_OVERVIEW" alt="NexBlue dinaminio galios valdiklis" class="guide-image">
+    <div class="guide-image-caption">1 pav. NexBlue dinaminio galios valdiklio modulis.</div>
+
+    <h3>1. DLM modulio montavimas skydelyje</h3>
+    <ol>
+      <li>DLM paprastai montuojamas ant <strong>DIN bėgio</strong> skydelyje.</li>
+      <li>Pasirinkite vietą, iš kurios patogu atvesti tiek maitinimo, tiek matavimo ir ryšio kabelius.</li>
+      <li>Užkabinkite modulį ant DIN bėgio ir įsitikinkite, kad jis tvirtai laikosi.</li>
+    </ol>
+
+    <!-- DLM skydelyje -->
+    <img src="IMG_URL_NEX_DLM_IN_PANEL" alt="NexBlue DLM montavimas skydelyje" class="guide-image">
+    <div class="guide-image-caption">2 pav. DLM montavimas skydelyje.</div>
+
+    <h3>2. Maitinimo pajungimas</h3>
+    <ol>
+      <li>Prijunkite DLM maitinimą (paprastai 230 V AC) prie nurodytų DLM gnybtų:
+        <ul>
+          <li>L – fazė,</li>
+          <li>N – nulis,</li>
+          <li>PE – įžeminimas (jei numatyta).</li>
+        </ul>
+      </li>
+      <li>Naudokite atskirą apsaugos aparatą (automatą) DLM maitinimo grandinei.</li>
+    </ol>
+
+    <!-- CT / skaitiklio pajungimas -->
+    <img src="IMG_URL_NEX_DLM_CT" alt="NexBlue DLM srovės matavimo grandinės" class="guide-image">
+    <div class="guide-image-caption">3 pav. Srovės transformatorių ar skaitiklio pajungimas.</div>
+
+    <h3>3. Srovės / galios matavimo pajungimas</h3>
+    <ol>
+      <li>Jei naudojami srovės transformatoriai (CT):
+        <ul>
+          <li>Užkabinkite CT ant fazių laidų (L1, L2, L3) pagal schemą.</li>
+          <li>Prijunkite CT antrinę dalį (S1/S2) prie DLM matavimo gnybtų.</li>
+        </ul>
+      </li>
+      <li>Jei DLM jungiamas prie išmanaus skaitiklio:
+        <ul>
+          <li>Prijunkite RS-485 / Modbus A/B linijas nuo skaitiklio iki DLM.</li>
+          <li>Laikykitės polariteto (A prie A, B prie B).</li>
+        </ul>
+      </li>
+      <li>Patikrinkite visus sujungimus pagal PDF pateiktą schemą.</li>
+    </ol>
+
+    <p style="background-color:#fff3cd; border-left:4px solid #ffc107; padding:1rem; margin:1rem 0; border-radius:0.25rem;">
+      <strong>⚠️ Svarbu!</strong> Netinkama CT kryptis ar klaidingas RS-485 sujungimas gali sukelti neteisingą matavimą ir
+      neteisingai veikiančią galios ribojimo funkciją. Visada du kartus patikrinkite schemas.
+    </p>
+
+    <!-- Ryšio kabelis į NexBlue stoteles -->
+    <img src="IMG_URL_NEX_DLM_COMM" alt="Ryšio kabelio pajungimas tarp DLM ir stotelių" class="guide-image">
+    <div class="guide-image-caption">4 pav. Ryšio kabelio jungimas tarp DLM ir NexBlue stotelių.</div>
+
+    <h3>4. Ryšio tarp DLM ir stotelių pajungimas</h3>
+    <ol>
+      <li>Nutieskite ryšio kabelį tarp DLM ir NexBlue stotelių:
+        <ul>
+          <li>RS-485 (Modbus) arba Ethernet – pagal DLM ir stotelių specifikaciją.</li>
+        </ul>
+      </li>
+      <li>Prijunkite prie atitinkamų DLM komunikacijos gnybtų ir stotelių komunikacijos įėjimų.</li>
+      <li>Jei naudojama RS-485, paskutinėje grandinės vietoje įjunkite terminaciją (120 Ω rezistorius ar atitinkamas nustatymas).</li>
+    </ol>
+
+    <!-- DLM konfigūravimo sąsaja -->
+    <img src="IMG_URL_NEX_DLM_UI" alt="NexBlue DLM konfigūravimo sąsaja" class="guide-image">
+    <div class="guide-image-caption">5 pav. DLM konfigūravimo sąsaja.</div>
+
+    <h3>5. DLM konfigūravimas</h3>
+    <ol>
+      <li>Įjunkite DLM maitinimą ir palaukite, kol jis pilnai pasileis.</li>
+      <li>Prisijunkite prie DLM konfigūravimo sąsajos:
+        <ul>
+          <li>per NexBlue programėlę, arba</li>
+          <li>per web sąsają (pagal tai, kaip aprašyta PDF).</li>
+        </ul>
+      </li>
+      <li>Nustatykite:
+        <ul>
+          <li><strong>Grid limit / Max main current</strong> – maksimali leistina įvado srovė (dažniausiai įvadinio automato nominalas),</li>
+          <li><strong>CT ratio</strong> – srovės transformatorių perdavimo santykis (jei naudojami CT),</li>
+          <li><strong>Ryšio parametrus</strong> (Modbus adresą, baud rate, jei reikalinga).</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- Stotelių pririšimas prie DLM -->
+    <img src="IMG_URL_NEX_DLM_STATIONS" alt="NexBlue stotelių pririšimas prie DLM" class="guide-image">
+    <div class="guide-image-caption">6 pav. NexBlue stotelių pririšimas DLM sistemoje.</div>
+
+    <h3>6. NexBlue stotelių pririšimas prie DLM</h3>
+    <ol>
+      <li>DLM sąsajoje atsidarykite stotelių / įrenginių sąrašą.</li>
+      <li>Pridėkite visus NexBlue įkroviklius:
+        <ul>
+          <li>priskirkite kiekvienai stotelei ID / pavadinimą,</li>
+          <li>jei reikia – nurodykite, prie kurių fazių ar šakos ji yra prijungta.</li>
+        </ul>
+      </li>
+      <li>Patikrinkite, ar visos stotelės rodomos kaip „Online / Connected“.</li>
+    </ol>
+
+    <h3>7. Bandomasis paleidimas ir patikra</h3>
+    <ol>
+      <li>Įjunkite visas stoteles ir DLM.</li>
+      <li>Prijunkite vieną EV ir pradėkite įkrovimą – stebėkite, ar DLM rodo realias sroves ir galias.</li>
+      <li>Prijunkite kelis EV (jei sistema daugiakanalė):
+        <ul>
+          <li>patikrinkite, ar bendra srovė neviršija nustatyto „Grid limit“,</li>
+          <li>ar galia paskirstoma tarp stotelių pagal nustatytas taisykles.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p style="background-color:#d4edda; border-left:4px solid #28a745; padding:1rem; margin:1rem 0; border-radius:0.25rem;">
+      <strong>✓ Sistema paruošta!</strong> Jei bandomasis paleidimas sėkmingas ir negaunate klaidų pranešimų,
+      NexBlue DLM ir stotelės sukonfigūruotos tinkamai.
+    </p>
+
+    <p><a href="index.html">← Grįžti į NexBlue gidų sąrašą</a></p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      © <span id="year"></span> EV Įkroviklių Gidai
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
