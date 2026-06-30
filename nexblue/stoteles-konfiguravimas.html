@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>NexBlue – stotelės konfigūravimo gidas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">EV Įkroviklių Gidai</a>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">NexBlue</a>
+    </nav>
+  </div>
+</header>
+
+<section class="about guide-section">
+  <div class="container">
+    <h2>NexBlue stotelės konfigūravimo gidas</h2>
+    <p>
+      Šiame gide aprašomas NexBlue stotelės nustatymas po montavimo:
+      prisijungimas prie valdymo sąsajos, tinklo nustatymai, vartotojų
+      autorizacija ir galios parametrų suvedimas.
+    </p>
+
+    <!-- Programėlės / web sąsajos vaizdas -->
+    <img src="IMG_URL_NEX_APP_OVERVIEW" alt="NexBlue konfigūravimo sąsaja" class="guide-image">
+    <div class="guide-image-caption">1 pav. NexBlue stotelės konfigūravimo sąsajos pavyzdys.</div>
+
+    <h3>1. Pradinis prisijungimas</h3>
+    <ol>
+      <li>Įjunkite stotelės maitinimą ir palaukite, kol ji pilnai pasileis.</li>
+      <li>Atidarykite <strong>NexBlue programėlę</strong> arba web sąsają (pagal tai, kaip nurodyta PDF).</li>
+      <li>Prisijunkite prie savo NexBlue paskyros (el. paštas ir slaptažodis).</li>
+    </ol>
+
+    <!-- Login ekranas -->
+    <img src="IMG_URL_NEX_LOGIN" alt="Prisijungimas prie NexBlue paskyros" class="guide-image">
+    <div class="guide-image-caption">2 pav. Prisijungimo langas.</div>
+
+    <h3>2. Stotelės pridėjimas / pasirinkimas</h3>
+    <ol>
+      <li>Programėlėje pasirinkite <strong>„Add charger“</strong> arba atsidarykite jau pridėtą stotelę iš sąrašo.</li>
+      <li>Jei reikia, leiskite programėlei naudotis <strong>Bluetooth / vietos duomenimis</strong>, kad rastų stotelę.</li>
+      <li>Patikrinkite, ar serijinis numeris / pavadinimas atitinka montuojamą stotelę.</li>
+    </ol>
+
+    <!-- Stotelių sąrašas -->
+    <img src="IMG_URL_NEX_CHARGERS_LIST" alt="NexBlue stotelių sąrašas programėlėje" class="guide-image">
+    <div class="guide-image-caption">3 pav. Stotelių sąrašas.</div>
+
+    <h3>3. Tinklo (Network) nustatymai</h3>
+    <ol>
+      <li>Nueikite į <strong>Network / Connectivity</strong> skiltį.</li>
+      <li>Pasirinkite prisijungimo prie interneto būdą:
+        <ul>
+          <li>Wi-Fi,</li>
+          <li>Ethernet (jei yra RJ45),</li>
+          <li>4G (jei sumontuotas mobiliojo ryšio modulis).</li>
+        </ul>
+      </li>
+      <li>Wi-Fi atveju:
+        <ul>
+          <li>Pasirinkite tinklo pavadinimą (SSID),</li>
+          <li>Įrašykite slaptažodį,</li>
+          <li>Išsaugokite nustatymus.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- Network ekranas -->
+    <img src="IMG_URL_NEX_NETWORK" alt="NexBlue tinklo nustatymai" class="guide-image">
+    <div class="guide-image-caption">4 pav. Tinklo nustatymai.</div>
+
+    <h3>4. Galios ir srovės ribos</h3>
+    <ol>
+      <li>Programėlėje raskite skiltį, kurioje nustatomi <strong>galios / srovės limitai</strong> (pvz. „Power“, „Current limit“).</li>
+      <li>Nustatykite:
+        <ul>
+          <li>automatinio jungiklio nominalą,</li>
+          <li>maksimalią stotelės atiduodamą srovę vienai fazei,</li>
+          <li>jei reikia, ribas dienai / nakčiai ar skirtingiems tarifams.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- Power limit ekranas -->
+    <img src="IMG_URL_NEX_POWER" alt="NexBlue galios / srovės ribojimo nustatymai" class="guide-image">
+    <div class="guide-image-caption">5 pav. Galios ribojimo nustatymai.</div>
+
+    <h3>5. Vartotojai ir prieiga</h3>
+    <ol>
+      <li>Nueikite į skiltį <strong>Users / Access / RFID</strong> (pagal tai, kaip pavadinta NexBlue sąsajoje).</li>
+      <li>Nustatykite:
+        <ul>
+          <li>ar stotelė leis įkrovimą be autentifikacijos (laisvos prieigos režimas),</li>
+          <li>ar reikalaus prisijungti programėle / RFID / kortele.</li>
+        </ul>
+      </li>
+      <li>Jei naudojami RFID raktai – pridėkite juos pagal PDF instrukciją.</li>
+    </ol>
+
+    <!-- Users / access ekranas -->
+    <img src="IMG_URL_NEX_USERS" alt="NexBlue vartotojų / prieigos nustatymai" class="guide-image">
+    <div class="guide-image-caption">6 pav. Vartotojų ir prieigos nustatymai.</div>
+
+    <h3>6. Tvarkaraščiai (Schedule), jei numatyta</h3>
+    <ol>
+      <li>Jei PDF’e aprašyta tvarkaraščių funkcija – nueikite į <strong>Schedule / Timers</strong> skiltį.</li>
+      <li>Nustatykite:
+        <ul>
+          <li>įkrovimo pradžios / pabaigos laiką,</li>
+          <li>dienas, kuriomis tvarkaraštis galios,</li>
+          <li>maksimalią srovę tuo metu.</li>
+        </ul>
+      </li>
+      <li>Išsaugokite tvarkaraštį.</li>
+    </ol>
+
+    <!-- Schedule ekranas -->
+    <img src="IMG_URL_NEX_SCHEDULE" alt="NexBlue įkrovimo tvarkaraščiai" class="guide-image">
+    <div class="guide-image-caption">7 pav. Tvarkaraščių nustatymai (jei naudojama funkcija).</div>
+
+    <h3>7. Konfigūracijos išsaugojimas ir testavimas</h3>
+    <ol>
+      <li>Išsaugokite visus nustatymus (mygtukas <strong>Save / Apply / Confirm</strong> ir pan.).</li>
+      <li>Jei rekomenduojama – perkraukite stotelę (per aplikaciją ar automatinį jungiklį).</li>
+      <li>Atlikite bandomą įkrovimą:
+        <ul>
+          <li>patikrinkite, ar veikia autentifikacija (jei įjungta),</li>
+          <li>ar neviršijama nustatyta maksimali srovė,</li>
+          <li>ar stotelė matoma per internetą (jei turi prisijungti prie serverio).</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p><a href="index.html">← Grįžti į NexBlue gidų sąrašą</a></p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      © <span id="year"></span> EV Įkroviklių Gidai
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
