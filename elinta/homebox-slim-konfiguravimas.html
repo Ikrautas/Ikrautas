@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>Elinta HomeBox Slim – konfigūravimo gidas (Wi‑Fi, LAN, GSM, galia)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">EV Įkroviklių Gidai</a>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Elinta</a>
+    </nav>
+  </div>
+</header>
+
+<section class="about guide-section">
+  <div class="container">
+    <h2>HomeBox Slim – konfigūravimo instrukcija</h2>
+    <p>
+      Šiame gide aprašoma, kaip sukonfigūruoti <strong>Elinta HomeBox Slim</strong> stotelę:
+      nustatyti ryšio tipą (Wi‑Fi, LAN, GSM/4G), pakeisti išėjimo galią ir atlikti
+      RCD (liekamosios srovės įtaiso) testą. Remtasi oficialia
+      <strong>„HomeBox Slim – Konfigūravimo instrukcija (Wi‑Fi, LAN, GSM, Galios nustatymas)”</strong>.
+    </p>
+
+    <h3>1. Ryšio tipai</h3>
+    <p>
+      Stotelė palaiko tris ryšio tipus pilnai vartotojo patirčiai (programėlė, debesijos valdymas, atnaujinimai):
+    </p>
+    <ul>
+      <li><strong>LAN</strong> – patikimiausias ryšio būdas.
+        <ul>
+          <li>Tinklas turi veikti <strong>DHCP</strong> režimu, kad stotelė automatiškai gautų IP adresą.</li>
+        </ul>
+      </li>
+      <li><strong>Wi‑Fi</strong> – paprastas diegimas, jei <strong>signalo stiprumas pakankamas</strong>.</li>
+      <li><strong>GSM/4G</strong> – geriausias sprendimas atokiose vietose.
+        <ul>
+          <li>Naudojant savo SIM kortelę, įsitikinkite, kad ji <strong>neturi PIN kodo</strong>.</li>
+          <li>Rekomenduojamas duomenų limitas – iki <strong>200 MB per mėn.</strong></li>
+          <li>Elinta Charge taip pat siūlo iš anksto apmokėtą SIM kortelę (papildoma kas 2 metus).</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>2. Wi‑Fi sąranka (jei užsakyta)</h3>
+
+    <!-- DIP jungikliai ant RFID plokštės -->
+    <img src="IMG_URL_HOMEBOX_DIP_WIFI" alt="Wi‑Fi režimo DIP jungikliai" class="guide-image">
+    <div class="guide-image-caption">1 pav. DIP jungikliai Wi‑Fi konfigūravimo režimui įjungti.</div>
+
+    <ol>
+      <li><strong>Išjunkite stotelės maitinimą.</strong></li>
+      <li>Raskite <strong>DIP jungiklius ant RFID plokštės</strong>.</li>
+      <li>Nustatykite juos taip:
+        <ul>
+          <li><strong>1 – ON</strong>,</li>
+          <li><strong>2 – ON</strong>,</li>
+          <li><strong>3 – OFF</strong>,</li>
+          <li><strong>4 – ON</strong>.</li>
+        </ul>
+      </li>
+      <li><strong>Įjunkite maitinimą</strong>.</li>
+      <li><strong>Wi‑Fi įrenginiu</strong> (telefonu, kompiuteriu) ieškokite tinklų, kol pamatysite
+        tinklą pavadinimu <strong>„CC Config XXXX“</strong>.</li>
+      <li>Prisijunkite prie šio tinklo naudodami slaptažodį:
+        <br><strong>elioscitycharge</strong></li>
+      <li>Naršyklėje atidarykite adresą <strong>192.168.4.1</strong>
+        (arba pasirinkite <strong>„Manage router“</strong>, jei siūlo).</li>
+      <li>Prisijunkite prie konfigūravimo svetainės naudodami tą patį slaptažodį
+        <strong>elioscitycharge</strong>.</li>
+      <li>Atidarykite skirtuką <strong>„Online“</strong>.</li>
+      <li>Įveskite savo <strong>namų Wi‑Fi tinklo pavadinimą (SSID)</strong> ir
+        <strong>slaptažodį</strong>.</li>
+    </ol>
+
+    <p style="background-color:#fff3cd; border-left:4px solid #ffc107; padding:0.75rem; border-radius:0.25rem;">
+      <strong>⚠️ Svarbu:</strong> priimamas tik <strong>2,4 GHz Wi‑Fi</strong> tinklas.
+      <strong>5 GHz</strong> tinklai <strong>neveiks</strong>.
+    </p>
+
+    <!-- Online / Wi‑Fi nustatymų ekranas -->
+    <img src="IMG_URL_HOMEBOX_WIFI_UI" alt="Wi‑Fi nustatymų langas CC Config" class="guide-image">
+    <div class="guide-image-caption">2 pav. Wi‑Fi nustatymų pildymas „CC Config“ sąsajoje.</div>
+
+    <ol start="11">
+      <li>Paspauskite <strong>„Save“</strong>. Sėkmės atveju matysite pranešimą:
+        <br><strong>„Configuration set successfully!“</strong></li>
+      <li>Skirtuke <strong>„Log“</strong> galite patikrinti įvestus SSID / slaptažodžio duomenis.</li>
+      <li><strong>Išjunkite stotelės maitinimą.</strong></li>
+      <li>Nustatykite DIP jungiklius į:
+        <ul>
+          <li><strong>1 – OFF</strong>,</li>
+          <li><strong>2 – OFF</strong>,</li>
+          <li><strong>3 – OFF</strong>,</li>
+          <li><strong>4 – ON</strong>.</li>
+        </ul>
+      </li>
+      <li><strong>Įjunkite maitinimą.</strong> Sėkmingai prisijungus prie Wi‑Fi,
+        <strong>„CC Config XXXX“</strong> tinklas automatiškai dings.</li>
+    </ol>
+
+    <h3>3. GSM/4G modemo sąranka (jei užsakyta)</h3>
+    <p>
+      Stotelė su GSM/4G opcija turi įmontuotą <strong>Teltonika RUT240</strong> modemą.
+    </p>
+
+    <!-- Modemo nuotrauka -->
+    <img src="IMG_URL_HOMEBOX_MODEM" alt="Teltonika RUT240 modemas HomeBox Slim stotelėje" class="guide-image">
+    <div class="guide-image-caption">3 pav. Integruotas Teltonika RUT240 modemas.</div>
+
+    <ol>
+      <li>Smailiu daiktu paspauskite <strong>SIM kortelės dėklo atblokavimo mygtuką</strong>.</li>
+      <li>Ištraukite <strong>SIM kortelės dėklą</strong>.</li>
+      <li>Įdėkite <strong>SIM kortelę</strong> į dėklą (teisinga kryptimi pagal žymėjimą).</li>
+      <li>Įstumkite dėklą atgal į modemą iki galo.</li>
+    </ol>
+
+    <p>
+      SIM kortelėje <strong>neturi būti nustatyto PIN kodo</strong>. Rekomenduojamas duomenų limitas –
+      iki <strong>200 MB/mėn.</strong>
+    </p>
+
+    <!-- Modemo LED indikatoriai -->
+    <img src="IMG_URL_HOMEBOX_MODEM_LEDS" alt="Modemo signalo ir ryšio LED indikatoriai" class="guide-image">
+    <div class="guide-image-caption">4 pav. Signalo stiprumo ir ryšio tipo (2G/3G/4G) LED indikatoriai.</div>
+
+    <p>
+      Sėkmingą prisijungimą prie tinklo parodys <strong>signalo stiprumo</strong> ir
+      <strong>ryšio tipo (2G/3G/4G)</strong> LED indikatoriai ant modemo.
+    </p>
+
+    <p style="background-color:#fef2f2; border-left:4px solid #dc2626; padding:0.75rem; border-radius:0.25rem;">
+      <strong>❌ DRAUDŽIAMA</strong> spausti modemo <strong>„Reset“</strong> mygtuką – stotelė atkeliauja
+      <strong>pilnai sukonfigūruota</strong>, o atstatymas ištrins visus nustatymus.
+    </p>
+
+    <h4>Alternatyvus LAN prijungimas per modemą</h4>
+    <p>
+      Stotelę su GSM modemu galima prijungti ir <strong>LAN kabeliu</strong>:
+    </p>
+    <ul>
+      <li>Įjunkite <strong>Ethernet kabelį</strong> į modemo <strong>WAN prievadą</strong>.</li>
+      <li>Užsidegęs ir mirksintis <strong>WAN LED</strong> reiškia, kad ryšys užmegztas.</li>
+    </ul>
+
+    <h3>4. Galios išvesties keitimas</h3>
+    <p>
+      Jei stotelė per galinga jūsų objekto įvadui (trūksta automatinio jungiklio numatytosios talpos),
+      galite <strong>sumažinti stotelės išėjimo galią</strong>. Tai pailgins įkrovimo laiką, bet
+      <strong>nepadidins reikiamo įvado galios</strong>.
+    </p>
+
+    <!-- Galios ribotuvas (sukamasis jungiklis) -->
+    <img src="IMG_URL_HOMEBOX_POWER_DIAL" alt="Sukamasis galios ribojimo jungiklis ant valdiklio" class="guide-image">
+    <div class="guide-image-caption">5 pav. Sukamasis jungiklis galios ribojimui ant įkrovimo valdiklio.</div>
+
+    <ol>
+      <li><strong>Išjunkite maitinimą</strong> stotelės įvade.</li>
+      <li>Atsukite <strong>6 korpuso varžtus</strong> ir atidarykite stotelę.</li>
+      <li>Stotelės viduje, <strong>kairėje viršuje ant įkrovimo valdiklio (charge controller)</strong>
+        raskite <strong>sukamąjį jungiklį</strong>.</li>
+      <li><strong>Plokščiu atsuktuvu</strong> nustatykite norimą padėtį pagal žemiau esančią lentelę.</li>
+    </ol>
+
+    <p style="background-color:#fff3cd; border-left:4px solid #ffc107; padding:0.75rem; border-radius:0.25rem;">
+      <strong>⚠️ Svarbu:</strong> Jei stotelė valdoma per <strong>RFID</strong> arba
+      <strong>internetą / programėlę</strong>, jungiklis turi likti ties
+      <strong>„0“ padėtimi</strong> – tokiu atveju galios ribą nustato pagrindinė plokštė (mainboard).
+      Nustačius bet kokią kitą reikšmę nei 0, stotelė <strong>nustos veikti</strong> teisingai.
+    </p>
+
+    <h4>Galios / srovės lentelė</h4>
+    <table style="width:100%; border-collapse:collapse; margin:0.75rem 0;">
+      <thead>
+      <tr style="background:#f3f4f6;">
+        <th style="border:1px solid #e5e7eb; padding:0.4rem;">Padėtis</th>
+        <th style="border:1px solid #e5e7eb; padding:0.4rem;">Srovė (A)</th>
+        <th style="border:1px solid #e5e7eb; padding:0.4rem;">Galia (kW) @ 1 fazė</th>
+        <th style="border:1px solid #e5e7eb; padding:0.4rem;">Galia (kW) @ 3 fazės</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">0</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">–</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Naudojami nustatymai iš pagrindinės plokštės</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Naudojami nustatymai iš pagrindinės plokštės</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">1</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">16 A</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">1,4 kW</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">4,2 kW</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">2</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">28 A</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">1,8 kW</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">5,5 kW</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">3</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">10 A</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">2,3 kW</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">6,9 kW</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">4</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">13 A</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">3 kW</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">9,5 kW</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">5</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">16 A</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">3,7 kW</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">11 kW</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">6</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">20 A</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">4,6 kW</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">13,8 kW</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">7</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">25 A</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">5,8 kW</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">17,8 kW</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">8</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">28 A</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">6,4 kW</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">19,9 kW</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">9</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">32 A</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">7,4 kW</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">22 kW</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <p style="font-size:0.9rem; color:#b91c1c;">
+      Niekada <strong>nedidinkite galios</strong> virš leistinos ribos jūsų objekto elektros instaliacijai.
+    </p>
+
+    <h3>5. RCD (liekamosios srovės įtaiso) testavimas</h3>
+    <p>
+      Gamintojas (Siemens) rekomenduoja testuoti RCD relę <strong>kas 3 mėnesius</strong>:
+    </p>
+    <ol>
+      <li>Jei vyksta įkrovimas – <strong>sustabdykite</strong> jį.</li>
+      <li>Atjunkite įkrovimo kabelį nuo automobilio ir stotelės.</li>
+      <li>Paskirstymo skydelyje <strong>išjunkite HomeBox Slim automatinį jungiklį</strong>.</li>
+      <li>Paspauskite <strong>„Test“</strong> mygtuką ant RCD.</li>
+      <li>Jei testas sėkmingas, RCD svirtelė <strong>nukris į „Down“ padėtį</strong>.</li>
+      <li>Pakelkite RCD svirtelę atgal į <strong>„įjungta“</strong> padėtį.</li>
+      <li><strong>Įjunkite HomeBox Slim automatinį jungiklį</strong>.</li>
+      <li>Stotelę galima toliau naudoti.</li>
+    </ol>
+
+    <!-- RCD nuotrauka -->
+    <img src="IMG_URL_HOMEBOX_RCD" alt="RCD su Test mygtuku" class="guide-image">
+    <div class="guide-image-caption">6 pav. Liekamosios srovės įtaisas (RCD) su „Test“ mygtuku.</div>
+
+    <p style="background-color:#fef2f2; border-left:4px solid #dc2626; padding:0.75rem; border-radius:0.25rem;">
+      Jei svirtelė <strong>nenukrenta</strong> testo metu – RCD <strong>neveikia</strong> ir turi būti pakeistas.
+      Tokiu atveju susisiekite su <strong>Elinta Charge</strong>.
+    </p>
+
+    <h3>6. RCD Tipas B / RCM (jei reikalinga pagal vietinius teisės aktus)</h3>
+    <p>
+      Standartinė stotelė turi <strong>Tipo A RCD</strong>. Kai kuriose Europos šalyse įstatymai
+      reikalauja atitikti <strong>IEC62955</strong> standartą (lieka­mosios nuolatinės srovės aptikimo įtaisas,
+      <strong>RDC‑DD</strong>) – tokiu atveju reikalingas <strong>Tipo B RCD</strong> arba pigesnė alternatyva –
+      <strong>RCM žiedinis jutiklis</strong>, naudojamas kartu su Tipo A RCD.
+    </p>
+
+    <h3>7. Trikčių diagnostika (dažniausios problemos)</h3>
+    <table style="width:100%; border-collapse:collapse; margin:0.75rem 0;">
+      <thead>
+      <tr style="background:#f3f4f6;">
+        <th style="border:1px solid #e5e7eb; padding:0.4rem;">Problema</th>
+        <th style="border:1px solid #e5e7eb; padding:0.4rem;">Galima priežastis</th>
+        <th style="border:1px solid #e5e7eb; padding:0.4rem;">Sprendimas</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Stotelė neveikia, LED nedega</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Nėra maitinimo, suveikė RCD / automatinis jungiklis</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Patikrinti paskirstymo skydelį, atstatyti RCD / automatinį jungiklį</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Galima aktyvuoti, bet įkrovimas neprasideda</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Kabelis netinkamai įjungtas, automobilis neužrakintas ar raktelis spynelėje</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Patikrinti jungtis, užrakinti automobilį, išimti raktelį</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Įkrovimas negali būti baigtas, kabelis užrakintas</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Prarastas ryšys su serveriu arba naudojamas netinkamas RFID žymeklis</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">
+          Patikrinti, ar LED šviečia raudonai po RFID prisilietimo – tai reiškia neteisingą žymeklį;
+          patikrinti ryšį su serveriu
+        </td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Nuolat dingsta ryšys su serveriu</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Silpnas Wi‑Fi / GSM signalas</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Patikrinti signalo stiprumą, esant reikalui – naudoti stiprintuvą / keisti antenos vietą</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Bandant pradėti įkrovimą, stotelė išsijungia</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Sugedęs kabelis arba elektromobilis</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">
+          Rankiniu būdu atstatyti RCD skydelyje, patikrinti kabelį ir EV; jei problema kartojasi – kreiptis į servisą
+        </td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Įkrovimas užtrunka ilgai</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Sumažinta išėjimo galia</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Patikrinti galios nustatymus (žr. 4 skyrių)</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">LED mirksi raudonai, įkrauti negalima</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Stotelės gedimas</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">
+          Patikrinti žurnalą (log), perkrauti stotelę, jei problema kartojasi – kreiptis į Elinta techninę pagalbą
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <p><a href="index.html">← Grįžti į Elinta gidų sąrašą</a></p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      © <span id="year"></span> EV Įkroviklių Gidai
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
