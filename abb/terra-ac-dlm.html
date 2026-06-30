@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>ABB Terra AC – DLM (dinaminis galios valdymas)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="../index.html">EV Įkroviklių Gidai</a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">ABB</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="about guide-section">
+    <div class="container">
+      <h2>ABB Terra AC – DLM (dinaminis galios valdymas)</h2>
+      <p>
+        Dinaminis galios valdymas (DLM) leidžia automatiškai paskirstyti turima
+        elektros galią tarp kelių Terra AC stotelių arba riboti bendrą pastato apkrovą.
+        Šiame gide aprašomas DLM modulio sujungimas ir konfigūracija.
+      </p>
+
+      <h3>Kas yra DLM?</h3>
+      <p>
+        DLM modulis matuoja realiąją elektros srovę / galią ir siunčia šią informaciją
+        sujungtiems Terra AC įkrovikliams. Įkrovikliai pagal šiuos duomenis automatiškai
+        reguliuoja įkrovimo srovę, kad nebūtų viršijamas bendras pastato arba linijos limitas.
+      </p>
+
+      <!-- DLM modulio nuotrauka -->
+      <img src="IMG_URL_DLM_MODULE" alt="ABB DLM modulis" class="guide-image">
+      <div class="guide-image-caption">1 pav. ABB DLM modulis.</div>
+
+      <h3>Reikalavimai ir paruošimas</h3>
+      <ul>
+        <li>DLM modulis turi būti sumontuotas skydelyje ant DIN bėgio.</li>
+        <li>Reikalingas ryšio kabelis (pvz. RS-485 arba Ethernet – pagal DLM modelį).</li>
+        <li>Srovės matavimo transformatoriai (CT – Current Transformers) arba tiesioginis
+          sujungimas prie fazių.</li>
+      </ul>
+
+      <!-- DLM montavimas skydelyje -->
+      <img src="IMG_URL_DLM_INSTALLATION" alt="DLM montavimas ant DIN bėgio" class="guide-image">
+      <div class="guide-image-caption">2 pav. DLM modulio montavimas skydelyje ant DIN bėgio.</div>
+
+      <h3>1. DLM modulio fizinis montavimas</h3>
+      <ol>
+        <li>Pasirinkite <strong>laisvas vietas skydelyje</strong> DLM moduliui.</li>
+        <li><strong>Kabliu atlaikymo dalimi užhakite</strong> DLM ant DIN bėgio.</li>
+        <li>Tvirtai nustumdykite modulį į dešinę, kol jis saugiai prikryps.</li>
+        <li>Patikrinkite, ar modulis <strong>yra lygiai nustatytas</strong> ir nesvyruoja.</li>
+      </ol>
+
+      <!-- Srovės transformatorių sujungimas -->
+      <img src="IMG_URL_CT_CONNECTION" alt="Srovės transformatorių (CT) sujungimas" class="guide-image">
+      <div class="guide-image-caption">3 pav. Srovės transformatorių sujungimas.</div>
+
+      <h3>2. Srovės matavimo transformatorių (CT) sujungimas</h3>
+      <ol>
+        <li><strong>Jei naudojami srovės transformatoriai:</strong></li>
+        <li>Apsukkite srovės transformatorius <strong>aplink tiriamas fazes</strong> (L1, L2, L3 arba tik vieną fazę – pagal poreikį).</li>
+        <li><strong>Patikrinkite CT orientaciją</strong> – rodyklės turėtų nurodyti srovės tekėjimo kryptį (nuo šaltinio prie apkrovos).</li>
+        <li>Prijunkite CT antrinį laidą prie DLM<strong> "CT Input"</strong> gnybtų.</li>
+      </ol>
+
+      <p style="background-color:#fff3cd; border-left:4px solid #ffc107; padding:1rem; margin:1rem 0; border-radius:0.25rem;">
+        <strong>⚠️ Svarbiausia!</strong> Jei CT nukreipta priešinga kryptimi, DLM matavimas bus neteisingas.
+        Prieš pradedant matuoti, patikrinkite CT poliaritetą ir srovės kryptį.
+      </p>
+
+      <!-- DLM maitinimo pajungimas -->
+      <img src="IMG_URL_DLM_POWER" alt="DLM maitinimo pajungimas" class="guide-image">
+      <div class="guide-image-caption">4 pav. DLM maitinimo pajungimas.</div>
+
+      <h3>3. DLM maitinimo pajungimas</h3>
+      <ol>
+        <li>DLM paprastai maitinamas iš <strong>230 V AC</strong> (vienfazis).</li>
+        <li>Prijunkite <strong>L, N, PE</strong> prie atitinkamų DLM gnybtų.</li>
+        <li>Jei naudojama atskirta apsaugos grandinė – naudokite <strong>automatinį jungiklį arba topini</strong>
+          (paprastai C6 arba C10).</li>
+      </ol>
+
+      <!-- Ryšio kabelio sujungimas -->
+      <img src="IMG_URL_DLM_COMMUNICATION" alt="Ryšio kabelio sujungimas tarp DLM ir Terra AC" class="guide-image">
+      <div class="guide-image-caption">5 pav. Ryšio kabelio sujungimas DLM ir Terra AC tarp.</div>
+
+      <h3>4. Ryšio kabelio sujungimas</h3>
+      <ol>
+        <li><strong>Nutieskite ryšio kabelį</strong> (pvz. RS-485 arba Ethernet) nuo DLM iki pirmo Terra AC įkroviklio.</li>
+        <li>Prijunkite prie <strong>DLM komunikacijos gnybtų</strong> (pvz. A/B arba TX+/TX- – pagal jūsų DLM modelį).</li>
+        <li>Prijunkite prie <strong>Terra AC įkroviklio komunikacijos gnybtų</strong> (dažniausiai modbus ar network lizdas).</li>
+        <li><strong>Jei kelios Terra AC stotelės</strong> – ryšį junglinkite <strong>kaskadiškai</strong>:
+          <ul>
+            <li>DLM → Terra AC #1 → Terra AC #2 → Terra AC #3 (jei reikalinga).</li>
+          </ul>
+        </li>
+      </ol>
+
+      <!-- Linijos terminacija -->
+      <img src="IMG_URL_TERMINATION" alt="Linijos terminacija" class="guide-image">
+      <div class="guide-image-caption">6 pav. Linijos terminacijos rezistoriai (jei RS-485).</div>
+
+      <h3>5. Linijos terminacija (tik RS-485)</h3>
+      <ol>
+        <li><strong>Jei naudojate RS-485</strong> kabelį – <strong>paskutiniame įrenginyje</strong> (pvz. paskutiniame Terra AC)
+          reikalinga <strong>linijos terminacija</strong>.</li>
+        <li>Tai dažniausiai atliekama įjungiant <strong>120 Ω rezistorių</strong> arba panašaus į A/B linijas.</li>
+        <li>Patikrinkite DLM ir Terra AC instrukcijas dėl tikslaus terminacijos būdo.</li>
+      </ol>
+
+      <!-- DLM konfigūracija per sąsają arba PC -->
+      <img src="IMG_URL_DLM_CONFIG_UI" alt="DLM konfigūravimo sąsaja" class="guide-image">
+      <div class="guide-image-caption">7 pav. DLM konfigūravimo sąsaja / ekranas.</div>
+
+      <h3>6. DLM konfigūracija</h3>
+      <ol>
+        <li>DLM konfigūruojamas per:
+          <ul>
+            <li><strong>TerraConfig programėlę</strong> (mobiliame telefone) arba</li>
+            <li><strong>DLM specialią konfigūracijos programą</strong> / web sąsają.</li>
+          </ul>
+        </li>
+        <li>Nustatykite šiuos pagrindinius parametrus:</li>
+        <li style="margin-top: 0.5rem;"><strong>Grid Limit (tinklo limitas)</strong> – maksimali srovė, kurią nori leisti sistemos.</li>
+        <li><strong>CT Ratio</strong> – srovės transformatoriaus persidengimo koeficientas (pvz. 100:5).</li>
+        <li><strong>Modbus ID</strong> – DLM identifikatorius tinkle (paprastai 1).</li>
+      </ol>
+
+      <!-- Terra AC DLM nustatymai -->
+      <img src="IMG_URL_TERRA_DLM_SETTINGS" alt="Terra AC DLM nustatymai TerraConfig" class="guide-image">
+      <div class="guide-image-caption">8 pav. Terra AC DLM nustatymai TerraConfig programėlėje.</div>
+
+      <h3>7. Terra AC konfigūracija DLM naudojimui</h3>
+      <ol>
+        <li>Atidarykite <strong>TerraConfig programėlę</strong> ir prisijunkite prie Terra AC stotelės.</li>
+        <li>Nueikite į <strong>„Energy Management"</strong> sekciją.</li>
+        <li>Įjunkite <strong>„Modbus"</strong> (arba DLM ryšį – pagal jūsų Terra AC versiją).</li>
+        <li>Nustatykite:</li>
+        <li style="margin-top: 0.5rem;"><strong>Grid Limit</strong> – tokia pati reikšmė, kaip ir DLM modulyje.</li>
+        <li><strong>DLM Mode</strong> – pasirinkite <strong>„Enabled"</strong> arba <strong>„Master/Slave"</strong> (pagal sistemos topologiją).</li>
+        <li>Spustelėkite <strong>„Save"</strong> ir <strong>„Confirm"</strong>.</li>
+      </ol>
+
+      <h3>8. Kelių Terra AC stotelių konfigūracija</h3>
+      <ol>
+        <li><strong>Pirmoji stotelė (Master):</strong> Konfigūruojama kaip aprašyta aukščiau.</li>
+        <li><strong>Kitos stotelės (Slave):</strong></li>
+        <li style="margin-top: 0.5rem;">Atlikite tą patį konfigūravimą, tačiau pasirinkite <strong>„Slave"</strong> režimą (jei numatyta).</li>
+        <li>Nustatykite unikalius <strong>Modbus ID</strong> kiekvienai stotelei (pvz. 1, 2, 3).</li>
+      </ol>
+
+      <h3>9. Bandomasis paleidimas ir patikra</h3>
+      <ol>
+        <li>Įjunkite visų komponentų maitinimą (DLM, Terra AC stotelės).</li>
+        <li>Palaukite, kol DLM ir Terra AC prisijungs vienas prie kito (tai gali trukti kelias minutes).</li>
+        <li><strong>Patikrinkite DLM indikatorius:</strong></li>
+        <li style="margin-top: 0.5rem;">Jei yra LED indikatoriai – žalias turėtų reikšti normalią veiklą.</li>
+        <li><strong>Atlikite bandomąjį įkrovimą:</strong></li>
+        <li style="margin-top: 0.5rem;">Prijunkite EV ir pradėkite įkrovimą.</li>
+        <li>Patikrinkite, ar srovė nesiūlai viršyti nustatyto limito.</li>
+        <li><strong>Jei naudojate kelias Terra AC stotelės:</strong> Vienu metu prijunkite kelis EV ir stebėkite, kaip jie dalina srovę.</li>
+      </ol>
+
+      <p style="background-color:#d4edda; border-left:4px solid #28a745; padding:1rem; margin:1rem 0; border-radius:0.25rem;">
+        <strong>✓ Sumontuota!</strong> Jei bandomasis paleidimas sėkmingas, DLM sistema yra paruošta darbui.
+        Jei iškilusios problemos – žiūrėkite ABB techninio palaikymo gidą.
+      </p>
+
+      <p><a href="index.html">← Grįžti į ABB gidų sąrašą</a></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        © <span id="year"></span> EV Įkroviklių Gidai
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
