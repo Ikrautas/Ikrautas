@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>HomeBox Slim – DLM (dinaminio galios valdymo) montavimas ir konfigūravimas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">EV Įkroviklių Gidai</a>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Elinta</a>
+    </nav>
+  </div>
+</header>
+
+<section class="about guide-section">
+  <div class="container">
+    <h2>HomeBox Slim – dinaminio galios valdymo (DLM) montavimo ir konfigūravimo gidas</h2>
+    <p>
+      Šiame gide aprašomas <strong>Elinta HomeBox Slim</strong> dinaminio galios valdymo
+      (DLM – Dynamic Load Management) montavimas ir konfigūravimas. Remtasi oficialia
+      instrukcija <strong>„HomeBox Slim – Dinaminio galios valdymo (DLM) montavimo ir konfigūravimo instrukcija“</strong>.
+    </p>
+
+    <h3>1. Kas yra DLM?</h3>
+    <p>
+      <strong>Dinaminis galios valdymas (DLM)</strong> balansuoja energijos vartojimą tarp
+      elektromobilio, įkrovimo stotelės ir kitų objekto elektros prietaisų.
+    </p>
+    <p>
+      Sistema naudoja papildomą <strong>išmanų energijos skaitiklį</strong>, sumontuotą
+      paskirstymo skydelyje ir matuojantį viso pastato suvartojimą. Stotelei
+      skiriamas <strong>likęs galios rezervas</strong>.
+    </p>
+
+    <h4>Du DLM variantai</h4>
+    <table style="width:100%; border-collapse:collapse; margin:0.75rem 0;">
+      <thead>
+      <tr style="background:#f3f4f6;">
+        <th style="border:1px solid #e5e7eb; padding:0.4rem;">Variantas</th>
+        <th style="border:1px solid #e5e7eb; padding:0.4rem;">Tinka</th>
+        <th style="border:1px solid #e5e7eb; padding:0.4rem;">Papildoma įranga</th>
+        <th style="border:1px solid #e5e7eb; padding:0.4rem;">Interneto ryšys</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">DLM Home</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Pastatams iki 80 A įvado</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Be srovės transformatorių</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Nereikalingas</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">DLM Business</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Pastatams iki 300 A įvado</td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">
+          + 3 vnt. srovės matavimo transformatorių pagrindiniame skydelyje
+        </td>
+        <td style="border:1px solid #e5e7eb; padding:0.4rem;">Privalomas</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      <li><strong>DLM Home</strong> tinka balansuoti <strong>vienos stotelės</strong> galią.</li>
+      <li><strong>DLM Business</strong> gali balansuoti <strong>kelias stoteles vienu metu</strong>.</li>
+    </ul>
+
+    <h3>2. DLM laidų montavimas</h3>
+
+    <p style="background-color:#fef2f2; border-left:4px solid #dc2626; padding:0.75rem; border-radius:0.25rem;">
+      <strong>⚠️ Pavojus:</strong> prieš pradedant DLM jungimo darbus,
+      <strong>įsitikinkite, kad maitinimo kabelyje nėra įtampos</strong>.
+      Išjunkite stotelės maitinimą paskirstymo skydelyje.
+    </p>
+
+    <!-- Skaitiklio + DLM schema -->
+    <img src="IMG_URL_HOMEBOX_DLM_SCHEMATIC" alt="DLM sujungimo schema su skaitikliu ir stotele" class="guide-image">
+    <div class="guide-image-caption">1 pav. Išmanaus skaitiklio ir HomeBox Slim sujungimo schema (DLM).</div>
+
+    <ol>
+      <li>Sumontuokite pridedamą <strong>išmanų energijos skaitiklį</strong> pastato paskirstymo
+        skydelyje, ant pastato <strong>įvadinės linijos</strong> (kad matuotų bendrą pastato suvartojimą).</li>
+      <li>Sujunkite skaitiklio duomenų liniją <strong>22</strong> su stotelės <strong>juodu laidu</strong>,
+        o liniją <strong>23</strong> – su <strong>raudonu laidu</strong>.</li>
+      <li>Abu duomenų laidus prijunkite prie <strong>laisvosios jungties</strong>, esančios šalia maitinimo
+        gnybtų stotelės viduje.</li>
+      <li>Skaitiklio ir stotelės sujungimui naudokite <strong>vytos poros (twisted pair) tipo kabelį</strong>,
+        pvz. standartinį <strong>UTP</strong> kabelį.</li>
+    </ol>
+
+    <h4>Sujungimo schema (su DLM)</h4>
+    <p>Bendras principas:</p>
+    <ol>
+      <li><strong>Pastato įvadas → išmanus energijos skaitiklis</strong> (montuojamas paskirstymo dėžėje, ant įvado linijos)</li>
+      <li>Iš skaitiklio → <strong>automatinis jungiklis C32</strong></li>
+      <li>Iš C32 → <strong>RCD 40 A / 30 mA</strong></li>
+      <li>Iš RCD → <strong>HomeBox Slim</strong></li>
+      <li>Skaitiklio kontaktai <strong>22/23</strong> sujungiami su stotelės DLM jungtimi per
+        <strong>RS‑485 vytos poros liniją</strong>.</li>
+      <li>Atskirai stotelės <strong>LAN RJ45</strong> jungtis prijungiama prie interneto
+        maršrutizatoriaus (jei naudojama <strong>DLM Business</strong> arba reikalingas
+        internetinis valdymas).</li>
+    </ol>
+
+    <p style="font-size:0.9rem; color:#4b5563;">
+      Visi apsauginiai įtaisai ir energijos skaitiklis privalo būti montuojami
+      <strong>atskirame paskirstymo skydelyje</strong> (žr. Montavimo instrukciją, 4.3 skyrių).
+    </p>
+
+    <h3>3. DLM konfigūravimas internetu (online)</h3>
+    <p>
+      Naudojama, kai stotelė turi nuolatinį <strong>interneto ryšį</strong> (ypač DLM Business atveju).
+      Visi nustatymai atliekami per debesijos platformą <strong>Elios.Cloud</strong>.
+    </p>
+
+    <!-- elios.cloud sąsajos ekrano vaizdas -->
+    <img src="IMG_URL_HOMEBOX_ELIOS_UI" alt="Elios.Cloud stotelės nustatymai" class="guide-image">
+    <div class="guide-image-caption">2 pav. Stotelės DLM nustatymai elios.cloud sistemoje.</div>
+
+    <ol>
+      <li>Prisijunkite prie administracinės svetainės <strong>elios.cloud</strong>.</li>
+      <li>Eikite į skirtuką <strong>„Stations“</strong> (Stotelės).</li>
+      <li>Pasirinkite stotelę, kurios galią norite reguliuoti.</li>
+      <li>Eikite į skirtuką <strong>„Edit“</strong> (Redaguoti).</li>
+      <li>Puslapio apačioje rasite DLM parametrus – nustatykite juos pagal poreikį.</li>
+    </ol>
+
+    <h4>Parametrų aprašymas</h4>
+
+    <p><strong>Balance Mode (Balansavimo režimas):</strong></p>
+    <ul>
+      <li><strong>None</strong> – stotelė visai <strong>nebalansuoja galios</strong>.</li>
+      <li><strong>Group</strong> – balansuoja tik <strong>tarp savo lizdų</strong>, nevertindama tikslaus
+        pastato suvartojimo (pvz., jei prijungti 2 automobiliai – galia dalinama per pusę).</li>
+      <li><strong>Local Dynamic Master</strong> – stotelė balansuoja galią pagal <strong>pastato suvartojimą</strong>
+        (naudoja DLM duomenis).</li>
+      <li><strong>Local Dynamic Slave</strong> – naudoja nustatymus iš <strong>„Local Dynamic Master“</strong>;
+        kelios stotelės gali kartu balansuoti galią pagal pastato suvartojimą.</li>
+    </ul>
+
+    <p><strong>Kiti svarbūs laukai:</strong></p>
+    <ul>
+      <li><strong>Minimum power (station)</strong> – minimali srovė, kurią gali naudoti stotelė.</li>
+      <li><strong>Maximum power (station)</strong> – maksimali srovė, kurią gali naudoti stotelė.</li>
+      <li><strong>Minimum power (socket/outlet)</strong> – minimali srovė lizdui.</li>
+      <li><strong>Maximum power (socket/outlet)</strong> – maksimali leistina srovė lizdui.</li>
+      <li><strong>Maximum power (dynamic input)</strong> – pastato automatinio jungiklio nominali srovė
+        (maksimali srovė, leidžiama tekėti per pastato įvadinį jungiklį).</li>
+      <li><strong>Maximum power (dynamic reserve)</strong> – srovės rezervas staigiems suvartojimo šuoliams
+        (naudojant buitinius prietaisus). Rekomenduojama palikti apie <strong>10 %</strong> viso pastato galios
+        kaip rezervą.</li>
+    </ul>
+
+    <h4>Skaičiavimo pavyzdys</h4>
+    <p>Jei pastato įvadas – <strong>32 A</strong>, o rezervas – <strong>13 A</strong>:</p>
+    <ul>
+      <li>Leidžiama naudoti: <strong>32 A – 13 A = 19 A</strong>, tačiau lizdo maksimumas yra
+        <strong>16 A</strong>, todėl realiai ribojama iki <strong>16 A</strong>.</li>
+      <li>Jei namas šiuo metu naudoja <strong>10 A</strong>:
+        <strong>32 – 13 – 10 = 9 A</strong> liks automobilio įkrovimui.</li>
+      <li>Jei apskaičiuota srovė <strong>mažesnė už nustatytą minimumą (socket)</strong>,
+        stotelė <strong>visai neįkraus</strong> automobilio.</li>
+    </ul>
+
+    <h3>4. DLM konfigūravimas neprisijungus prie interneto (offline)</h3>
+    <p>
+      Naudojama, kai stotelė <strong>neturi nuolatinio interneto ryšio</strong> (pvz.,
+      <strong>DLM Home</strong> versija). Nustatymai daromi per vietinę „CC Config“ Wi‑Fi sąsają.
+    </p>
+
+    <!-- DIP jungikliai offline režimui -->
+    <img src="IMG_URL_HOMEBOX_DLM_DIP_OFFLINE" alt="DIP jungikliai DLM offline režimui" class="guide-image">
+    <div class="guide-image-caption">3 pav. DIP jungiklių padėtis DLM offline konfigūravimui.</div>
+
+    <ol>
+      <li><strong>Išjunkite stotelės maitinimą.</strong></li>
+      <li>Raskite <strong>DIP jungiklius</strong> ant RFID plokštės.</li>
+      <li>Nustatykite juos taip:
+        <ul>
+          <li><strong>1 – ON</strong>,</li>
+          <li><strong>2 – ON</strong>,</li>
+          <li><strong>3 – ON</strong>,</li>
+          <li><strong>4 – OFF</strong>.</li>
+        </ul>
+      </li>
+      <li><strong>Įjunkite maitinimą.</strong></li>
+      <li><strong>Wi‑Fi įrenginiu</strong> ieškokite tinklo, kol pamatysite
+        <strong>„CC Config XXXX“</strong>.</li>
+      <li>Prisijunkite naudodami slaptažodį:
+        <br><strong>elioscitycharge</strong></li>
+      <li>Naršyklėje atidarykite <strong>192.168.4.1</strong> (arba pasirinkite <strong>„Manage router“</strong>).</li>
+      <li>Prisijunkite prie konfigūravimo puslapio tuo pačiu slaptažodžiu
+        <strong>elioscitycharge</strong>.</li>
+      <li>Eikite į skirtuką <strong>„Offline“</strong> ir nustatykite tuos pačius parametrus, kaip
+        aprašyta online sąrankoje:</li>
+    </ol>
+
+    <ul>
+      <li><strong>Maximum power (dynamic input)</strong> – pastato automatinio jungiklio nominali srovė.</li>
+      <li><strong>Maximum power (dynamic reserve)</strong> – rekomenduojama palikti apie
+        <strong>10 %</strong> viso pastato galios kaip rezervą.</li>
+    </ul>
+
+    <!-- Offline nustatymų ekranas -->
+    <img src="IMG_URL_HOMEBOX_DLM_OFFLINE_UI" alt="DLM offline nustatymų langas" class="guide-image">
+    <div class="guide-image-caption">4 pav. DLM offline nustatymai „Offline“ skirtuke.</div>
+
+    <ol start="10">
+      <li>Baigę nustatymus, <strong>išjunkite maitinimą</strong>.</li>
+      <li>Nustatykite DIP jungiklius į:
+        <ul>
+          <li><strong>1 – OFF</strong>,</li>
+          <li><strong>2 – OFF</strong>,</li>
+          <li><strong>3 – OFF</strong>,</li>
+          <li><strong>4 – ON</strong>.</li>
+        </ul>
+      </li>
+      <li><strong>Įjunkite maitinimą</strong> – konfigūracija įsigalios.</li>
+    </ol>
+
+    <h3>5. Saugos pastabos</h3>
+    <ul>
+      <li><strong>DLM laidų jungimo darbus</strong> privalo atlikti tik <strong>kvalifikuotas elektrikas</strong>.</li>
+      <li>Prieš bet kokius jungimo darbus stotelės viduje – visada
+        <strong>išjunkite maitinimą paskirstymo skydelyje</strong>.</li>
+      <li><strong>DLM Business</strong> versijai būtinas <strong>pastovus interneto ryšys</strong> –
+        be jo sistema negalės teisingai balansuoti galios tarp kelių stotelių.</li>
+      <li>Niekada <strong>nenustatykite didesnės maksimalios galios</strong>, nei leidžia jūsų pastato
+        elektros instaliacija – tai gali sukelti automatinio jungiklio suveikimą arba
+        <strong>gaisro pavojų</strong>.</li>
+    </ul>
+
+    <p><a href="index.html">← Grįžti į Elinta gidų sąrašą</a></p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      © <span id="year"></span> EV Įkroviklių Gidai
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
