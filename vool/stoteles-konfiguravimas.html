@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>Vool – stotelės konfigūravimo gidas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">EV Įkroviklių Gidai</a>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Vool</a>
+    </nav>
+  </div>
+</header>
+
+<section class="about guide-section">
+  <div class="container">
+    <h2>Vool stotelės konfigūravimo gidas</h2>
+    <p>
+      Šis gidas aprašo, kaip sukonfigūruoti Vool stotelę po montavimo:
+      prisijungti prie jos, nustatyti tinklą, vartotojų prieigą ir galios ribojimą.
+      Struktūra paremta „VOOL stotelės ir LMC diegimas“ Notion gidu.
+    </p>
+
+    <!-- App / konfigūravimo sąsajos vaizdas -->
+    <img src="IMG_URL_VOOL_APP_OVERVIEW" alt="Vool stotelės konfigūravimo sąsaja" class="guide-image">
+    <div class="guide-image-caption">1 pav. Vool stotelės valdymo aplikacija / web sąsaja.</div>
+
+    <h3>1. Pradinis prisijungimas</h3>
+    <ol>
+      <li>Įjunkite stotelę (maitinimas turi būti įjungtas skydelyje).</li>
+      <li>Palaukite, kol stotelė pilnai pasileis (LED / ekranas pereis į parengties būseną).</li>
+      <li>Atidarykite <strong>Vool programėlę</strong> arba web sąsają (pagal tai, ką naudoja tavo gidas).</li>
+      <li>Prisijunkite prie savo <strong>Vool paskyros</strong> (el. paštas ir slaptažodis).</li>
+    </ol>
+
+    <!-- Prisijungimo ekranas -->
+    <img src="IMG_URL_VOOL_LOGIN" alt="Prisijungimas prie Vool paskyros" class="guide-image">
+    <div class="guide-image-caption">2 pav. Prisijungimas prie Vool paskyros.</div>
+
+    <h3>2. Stotelės pasirinkimas aplikacijoje</h3>
+    <ol>
+      <li>Programėlėje pasirinkite <strong>„Add charger“</strong> arba panašią funkciją.</li>
+      <li>Leiskite aplikacijai naudotis <strong>Bluetooth</strong> / <strong>vietos duomenimis</strong>, jei to prašoma.</li>
+      <li>Pasirinkite sąraše <strong>teisingą Vool stotelę</strong> (pagal serijinį numerį ar pavadinimą).</li>
+    </ol>
+
+    <!-- Stotelių sąrašas -->
+    <img src="IMG_URL_VOOL_CHARGER_LIST" alt="Vool stotelių sąrašas programėlėje" class="guide-image">
+    <div class="guide-image-caption">3 pav. Pasirenkama stotelė sąraše.</div>
+
+    <h3>3. Tinklo nustatymai</h3>
+    <ol>
+      <li>Nueikite į <strong>Network / Wi-Fi / Connectivity</strong> skiltį.</li>
+      <li>Pasirinkite, ar stotelė prisijungs per:
+        <ul>
+          <li>Wi-Fi tinklą</li>
+          <li>Ethernet (jei yra RJ45 lizdas)</li>
+          <li>4G / mobilųjį ryšį (jei sumontuotas modulis)</li>
+        </ul>
+      </li>
+      <li>Wi-Fi atveju:
+        <ul>
+          <li>Pasirinkite tinklo pavadinimą (SSID);</li>
+          <li>Įveskite slaptažodį;</li>
+          <li>Išsaugokite nustatymus.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- Network ekranas -->
+    <img src="IMG_URL_VOOL_NETWORK" alt="Vool tinklo nustatymai" class="guide-image">
+    <div class="guide-image-caption">4 pav. Tinklo nustatymai.</div>
+
+    <h3>4. Galios ribojimo nustatymai</h3>
+    <ol>
+      <li>Aplikacijoje raskite skiltį <strong>„Power / Load management / Max current“</strong> (pagal tikslų pavadinimą tavo gide).</li>
+      <li>Nustatykite:
+        <ul>
+          <li><strong>Maksimalią stotelės srovę</strong> (pvz. 16 A, 32 A),</li>
+          <li><strong>Vielų apsaugos automato nominalą</strong> – jei toks pasirinkimas yra.</li>
+        </ul>
+      </li>
+      <li>Jei stotelė valdoma per LMC – čia tik nurodoma lokali riba, o dinaminis valdymas bus LMC pusėje.</li>
+    </ol>
+
+    <!-- Power limit ekranas -->
+    <img src="IMG_URL_VOOL_POWER" alt="Vool stotelės galios ribojimo ekranas" class="guide-image">
+    <div class="guide-image-caption">5 pav. Galios ribojimo nustatymai.</div>
+
+    <h3>5. Vartotojų ir prieigos nustatymai</h3>
+    <ol>
+      <li>Nueikite į skiltį <strong>„Users / Access / RFID“</strong> (pagal tavo gido pavadinimus).</li>
+      <li>Nustatykite, ar stotelė dirbs:
+        <ul>
+          <li><strong>„Open access / Free charging“</strong> – leidžia krautis be autorizacijos (pvz. privačiame garaže),</li>
+          <li>ar tik <strong>autorizuoti vartotojai</strong> (RFID kortelė, paskyra programėlėje ir pan.).</li>
+        </ul>
+      </li>
+      <li>Prireikus pridėkite naujus vartotojus ar RFID korteles.</li>
+    </ol>
+
+    <!-- Users / Access ekranas -->
+    <img src="IMG_URL_VOOL_USERS" alt="Vartotojų valdymas Vool stotelėje" class="guide-image">
+    <div class="guide-image-caption">6 pav. Vartotojų / prieigos valdymas.</div>
+
+    <h3>6. Papildomos funkcijos (tvarkaraščiai, tarifai ir pan.)</h3>
+    <ol>
+      <li>Jei tavo gide yra skiltis apie laikmačius (<strong>Schedule / Timers</strong>):
+        <ul>
+          <li>Nustatyk įkrovimo pradžios / pabaigos laikus;</li>
+          <li>Pasirink savaitės dienas;</li>
+          <li>Nurodyk maksimalią srovę to laikmačio metu.</li>
+        </ul>
+      </li>
+      <li>Jei yra tarifai (pvz. pigios / brangios valandos) – nustatyk juos pagal tiekėjo tarifų planą.</li>
+    </ol>
+
+    <!-- Schedule ekranas -->
+    <img src="IMG_URL_VOOL_SCHEDULE" alt="Įkrovimo tvarkaraščiai Vool programėlėje" class="guide-image">
+    <div class="guide-image-caption">7 pav. Tvarkaraščio (Schedule) nustatymas.</div>
+
+    <h3>7. Konfigūracijos išsaugojimas ir testavimas</h3>
+    <ol>
+      <li>Išsaugokite visus atliktus nustatymus (mygtukas <strong>Save / Apply</strong> ir pan.).</li>
+      <li>Prireikus perkraukite stotelę (per aplikaciją ar išjungiant / įjungiant automatinį jungiklį).</li>
+      <li>Atlikite bandomąjį įkrovimą ir patikrinkite, ar:
+        <ul>
+          <li>stotelė prisijungusi prie interneto (jei reikalinga),</li>
+          <li>veikia autentifikacija (jei įjungta),</li>
+          <li>neviršijama nustatyta srovė.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p><a href="index.html">← Grįžti į Vool gidų sąrašą</a></p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      © <span id="year"></span> EV Įkroviklių Gidai
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
