@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>Morek – 4G modulio montavimo gidas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="../index.html">EV Įkroviklių Gidai</a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Morek</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="about guide-section">
+    <div class="container">
+      <h2>4G modulio montavimo gidas Morek stotelėms</h2>
+      <p>
+        4G modulis leidžia Morek stotelei prisijungti prie interneto mobiliuoju
+        ryšiu. Šiame gide aprašomas modulio įrengimas, antenos pajungimas ir
+        pagrindiniai nustatymai.
+      </p>
+
+      <!-- 4G modulio nuotrauka -->
+      <img src="IMG_URL_4G_MODULE" alt="Morek 4G modulis" class="guide-image">
+      <div class="guide-image-caption">1 pav. 4G modulis Morek stotelei.</div>
+
+      <h3>1. Modulio montavimas stotelės viduje</h3>
+      <!-- nuotrauka, kaip modulis įstatomas į stotelės plokštę / lizdą -->
+      <img src="IMG_URL_4G_INSIDE" alt="4G modulio montavimas stotelės viduje" class="guide-image">
+      <div class="guide-image-caption">2 pav. 4G modulio vieta stotelės viduje.</div>
+
+      <ol>
+        <li>Išjunkite stotelės maitinimą ir atidarykite korpusą.</li>
+        <li>Suraskite 4G modulio jungties vietą (lizdą) pagal Morek instrukciją.</li>
+        <li>Įstatykite 4G modulį į nurodytą vietą ir užfiksuokite, jei reikia.</li>
+      </ol>
+
+      <h3>2. SIM kortelės įdėjimas</h3>
+      <!-- nuotrauka su SIM lizdu -->
+      <img src="IMG_URL_4G_SIM" alt="SIM kortelės lizdas 4G modulyje" class="guide-image">
+      <div class="guide-image-caption">3 pav. SIM kortelės įdėjimas į 4G modulį.</div>
+
+      <ol>
+        <li>Įsitikinkite, kad turite aktyvią SIM kortelę su duomenų planu.</li>
+        <li>Įdėkite SIM kortelę į modulio lizdą pagal nurodytą kryptį.</li>
+        <li>Patikrinkite, ar kortelė įstatyta iki galo ir tvirtai laikosi.</li>
+      </ol>
+
+      <h3>3. Antenos pajungimas</h3>
+      <!-- nuotrauka su antenos kabeliu ir prievadu -->
+      <img src="IMG_URL_4G_ANTENNA" alt="4G antenos pajungimas" class="guide-image">
+      <div class="guide-image-caption">4 pav. 4G antenos pajungimas prie modulio.</div>
+
+      <ol>
+        <li>Prijunkite antenos kabelį prie modulio antenos jungties.</li>
+        <li>Antena turi būti montuojama vietoje, kur geras mobiliojo ryšio signalas.</li>
+        <li>Venkite antenos montavimo arti storų metalinių kliūčių ar uždarų metalinių skydų.</li>
+      </ol>
+
+      <h3>4. Pagrindiniai nustatymai</h3>
+      <ol>
+        <li>Uždarykite stotelės korpusą ir įjunkite maitinimą.</li>
+        <li>Prisijunkite prie stotelės valdymo sąsajos (web / programėlė).</li>
+        <li>Skiltyje „Network“ ar „4G“ įveskite operatoriaus APN duomenis, jei reikia.</li>
+        <li>Patikrinkite, ar stotelė gauna IP adresą per 4G ir gali prisijungti prie serverio.</li>
+      </ol>
+
+      <p><a href="index.html">← Grįžti į Morek gidų sąrašą</a></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        © <span id="year"></span> EV Įkroviklių Gidai
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
