@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Morek – руководство по установке DLM Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Руководства по зарядным станциям</a>
+    </div>
+    <nav class="main-nav">
+      <a href="../index.html#brands">Производители</a>
+    </nav>
+    <div class="lang-switch">
+      <a href="../../morek/index.html">LT</a>
+      <span class="lang-sep">/</span>
+      <a href="dlm-hub-ustanovka.html" class="lang-active">RU</a>
+    </div>
+  </div>
+</header>
+
+<section class="about guide-section">
+  <div class="container">
+    <h2>Руководство по установке Morek DLM Hub</h2>
+    <p>
+      В этом руководстве описывается установка и базовая конфигурация
+      <strong>Morek DLM Hub</strong> – модуля динамического управления мощностью,
+      который распределяет доступную мощность между зарядными станциями Morek.
+      Вся работа должна выполняться в соответствии с официальной документацией
+      Morek и схемами, представленными в
+      <a href="https://wiki.morek.eu/lt/support/solutions/204000006630" target="_blank">
+        Morek Wiki
+      </a>.
+    </p>
+
+    <!-- 1) Bendras DLM Hub vaizdas -->
+    <img src="IMG_URL_MOREK_DLM_OVERVIEW"
+         alt="Модуль Morek DLM Hub"
+         class="guide-image">
+    <div class="guide-image-caption">
+      1 рис. Модуль распределения мощности Morek DLM Hub.
+    </div>
+
+    <h3>Место установки DLM Hub</h3>
+    <ol>
+      <li><strong>Монтаж в распределительном щите</strong><br>
+        Обычно DLM‑концентратор устанавливается в <strong>электрическом щите
+        на DIN‑рейке</strong>.
+      </li>
+      <li><strong>Выбор места</strong><br>
+        Выберите место с достаточным пространством для подвода кабелей
+        и хорошей доступностью для обслуживания (визуальная проверка, замена,
+        обслуживание).
+      </li>
+      <li><strong>Условия окружающей среды</strong><br>
+        Убедитесь, что условия окружающей среды (температура, влажность,
+        степень защиты шкафа) соответствуют техническим характеристикам
+        устройства DLM Hub, указанным в документации.
+      </li>
+    </ol>
+
+    <!-- 2) Nuotrauka – DLM Hub ant DIN bėgio -->
+    <img src="IMG_URL_MOREK_DLM_IN_PANEL"
+         alt="Установка DLM Hub на DIN‑рейку"
+         class="guide-image">
+    <div class="guide-image-caption">
+      2 рис. Установка DLM Hub на DIN‑рейку в распределительном щите.
+    </div>
+
+    <h3>Подключение питания</h3>
+    <ol>
+      <li><strong>Схема подключения питания</strong><br>
+        Подключите клеммы питания DLM Hub в соответствии со
+        <strong>схемой Morek</strong> (например, к источнику питания
+        <strong>230 В AC</strong>, если это требуется для вашей модели).
+      </li>
+      <li><strong>Отдельная защита</strong><br>
+        Используйте отдельную защиту (автоматический выключатель)
+        для питания DLM Hub, если это предусмотрено в проекте
+        и/или указано в документации производителя.
+      </li>
+    </ol>
+
+    <!-- 3) Nuotrauka – DLM maitinimo gnybtai -->
+    <img src="IMG_URL_MOREK_DLM_POWER"
+         alt="Клеммы питания DLM Hub"
+         class="guide-image">
+    <div class="guide-image-caption">
+      3 рис. Клеммы питания на модуле DLM Hub.
+    </div>
+
+    <h3>Подключение DLM Hub к зарядной станции</h3>
+
+    <!-- 4) Nuotrauka – ryšio gnybtai / ports -->
+    <img src="IMG_URL_MOREK_DLM_COMM"
+         alt="Клеммы/порты связи DLM Hub"
+         class="guide-image">
+    <div class="guide-image-caption">
+      4 рис. Клеммы/порты подключения коммуникационного кабеля DLM Hub.
+    </div>
+
+    <ol>
+      <li><strong>Прокладка коммуникационного кабеля</strong><br>
+        Проложите коммуникационный кабель (например, <strong>RS‑485</strong> или другой
+        поддерживаемый интерфейс) между <strong>DLM Hub</strong> и каждой зарядной станцией
+        Morek. Обычно используется топология
+        <strong>«ведущий–ведомый» (master–slave)</strong>.
+      </li>
+      <li><strong>Подключение линий A/B</strong><br>
+        Подсоедините линии <strong>A/B</strong> к соответствующим клеммам на
+        концентраторе DLM и на зарядных станциях. Соблюдайте полярность линий
+        и маркировку, указанную в документации.
+      </li>
+      <li><strong>Оконечивание линии</strong><br>
+        При необходимости подключите <strong>оконечный резистор</strong> линии
+        в последней точке цепи (последняя станция в цепочке RS‑485), чтобы
+        обеспечить корректную работу шины связи.
+      </li>
+    </ol>
+
+    <h3>Подключение к умному счётчику (если используется)</h3>
+
+    <!-- 5) Nuotrauka – jungtis su išmaniu skaitikliu -->
+    <img src="IMG_URL_MOREK_DLM_METER"
+         alt="Подключение DLM Hub к счётчику электроэнергии"
+         class="guide-image">
+    <div class="guide-image-caption">
+      5 рис. Подключение DLM Hub к изнашему энергосчётчику.
+    </div>
+
+    <ol>
+      <li><strong>Сигнальные выходы счётчика</strong><br>
+        Подключите выходные сигналы измерительного прибора (измерительные
+        или коммуникационные линии) к <strong>клеммам измерения/связи</strong>
+        концентратора DLM Hub.
+      </li>
+      <li><strong>Проверка полярности</strong><br>
+        Проверьте <strong>полярность</strong> и соответствие подключений
+        <strong>схеме, предоставленной Morek</strong>. Неверная полярность
+        может привести к некорректным измерениям или отсутствию связи.
+      </li>
+    </ol>
+
+    <h3>Основы конфигурации DLM Hub</h3>
+
+    <!-- 6) Nuotrauka – DLM konfigūravimo sąsaja -->
+    <img src="IMG_URL_MOREK_DLM_UI"
+         alt="Интерфейс настройки DLM Hub"
+         class="guide-image">
+    <div class="guide-image-caption">
+      6 рис. Пример интерфейса настройки параметров DLM Hub.
+    </div>
+
+    <ol>
+      <li><strong>Включение устройства</strong><br>
+        Включите питание DLM Hub и дайте устройству полностью загрузиться.
+      </li>
+      <li><strong>Доступ к настройкам</strong><br>
+        Настройте DLM Hub через <strong>интерфейс станции</strong> или отдельный
+        веб/конфигурационный интерфейс (в зависимости от того, как это описано
+        в официальной документации Morek).
+      </li>
+      <li><strong>Основные параметры</strong><br>
+        Как правило, требуется задать:
+        <ul>
+          <li><strong>общий лимит входной мощности</strong> (максимальный ток/мощность,
+            доступные для всего объекта),</li>
+          <li><strong>количество станций</strong>, участвующих в DLM,</li>
+          <li><strong>приоритеты</strong> между станциями (если такая функция предусмотрена),
+            например, какая станция должна получать мощность в первую очередь.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p style="margin-top:1.5rem;">
+      <a href="index.html">← Вернуться к списку гидов Morek</a>
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      © <span id="year"></span> Руководства по зарядным станциям
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
