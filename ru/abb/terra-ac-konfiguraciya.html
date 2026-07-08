@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>ABB Terra AC – руководство по конфигурации через TerraConfig</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Руководства по зарядным станциям</a>
+    </div>
+    <nav class="main-nav">
+      <a href="../index.html#brands">Производители</a>
+    </nav>
+    <div class="lang-switch">
+      <a href="../../abb/terra-ac-konfiguravimas.html">LT</a>
+      <span class="lang-sep">/</span>
+      <a href="terra-ac-konfiguraciya.html" class="lang-active">RU</a>
+    </div>
+  </div>
+</header>
+
+<section class="about guide-section">
+  <div class="container">
+    <h2>ABB Terra AC – руководство по конфигурации через приложение TerraConfig</h2>
+    <p>
+      В этом руководстве описано, как выполнить <strong>первичную конфигурацию
+      станции ABB Terra AC</strong> после монтажа с помощью мобильного
+      приложения <strong>TerraConfig</strong>. Настройки включают:
+      обновление прошивки, сеть, режим доступа, ограничение мощности и (при
+      необходимости) DLM.
+    </p>
+
+    <h3>Необходимые данные</h3>
+    <ul>
+      <li>Смартфон с установленным приложением <strong>TerraConfig</strong>
+          (iOS или Android).</li>
+      <li><strong>PIN‑код</strong> станции (на карточке / листе A4 в коробке ABB).</li>
+      <li>Учётная запись для входа в TerraConfig
+          (e‑mail и пароль; если это твarya įmonės paskyra – pagal jūsų susitarimą).</li>
+    </ul>
+
+    <h3>1. Включение станции и запуск TerraConfig</h3>
+    <ol>
+      <li>Включите питание ABB Terra AC (автоматический выключатель в щите).</li>
+      <li>Подождите около <strong>1 минуты</strong>, пока станция полностью загрузится.</li>
+      <li>Откройте приложение <strong>TerraConfig</strong> на своём телефоне.</li>
+    </ol>
+
+    <!-- Bluetooth permission -->
+    <img src="IMG_URL_ABB_CFG_BLUETOOTH"
+         alt="Запрос на доступ к Bluetooth в TerraConfig"
+         class="guide-image">
+    <div class="guide-image-caption">
+      1 рис. Разрешение доступа к Bluetooth в приложении TerraConfig.
+    </div>
+
+    <h3>2. Разрешение использования Bluetooth</h3>
+    <ol>
+      <li>При первом запуске приложение попросит доступ к <strong>Bluetooth</strong>.</li>
+      <li>Нажмите <strong>«Allow / Разрешить»</strong>, чтобы телефон мог
+          подключаться к станции ABB Terra AC по Bluetooth.</li>
+    </ol>
+
+    <!-- Login screen -->
+    <img src="IMG_URL_ABB_CFG_LOGIN"
+         alt="Окно входа в TerraConfig"
+         class="guide-image">
+    <div class="guide-image-caption">
+      2 рис. Окно входа в аккаунт TerraConfig.
+    </div>
+
+    <h3>3. Вход в учётную запись TerraConfig</h3>
+    <ol>
+      <li>Введите учётные данные:
+        <ul>
+          <li><strong>Email</strong> – адрес вашей учётной записи,</li>
+          <li><strong>Password</strong> – пароль.</li>
+        </ul>
+      </li>
+      <li>Нажмите <strong>«LOG IN»</strong> и дождитесь авторизации.</li>
+      <li>При первом входе приложение может показать подсказки – можно
+          нажать <strong>«Skip»</strong>, чтобы пропустить их.</li>
+    </ol>
+
+    <!-- Configure A Charger -->
+    <img src="IMG_URL_ABB_CFG_CONFIGURE"
+         alt="Кнопка «Configure A Charger» в TerraConfig"
+         class="guide-image">
+    <div class="guide-image-caption">
+      3 рис. Выбор «Configure A Charger» для настройки станции.
+    </div>
+
+    <h3>4. Выбор станции для конфигурации</h3>
+    <ol>
+      <li>На главном экране TerraConfig нажмите
+          <strong>«Configure A Charger»</strong>.</li>
+      <li>Откроется список станций поблизости (по Bluetooth).</li>
+    </ol>
+
+    <!-- List of chargers -->
+    <img src="IMG_URL_ABB_CFG_LIST"
+         alt="Список доступных станций ABB Terra AC"
+         class="guide-image">
+    <div class="guide-image-caption">
+      4 рис. Список станций поблизости – проверьте серийный номер.
+    </div>
+
+    <h3>5. Проверка серийного номера и ввод PIN</h3>
+    <ol>
+      <li>Если рядом несколько станций, <strong>сверьте серийный номер</strong>
+          в списке с номером на правой стороне корпуса станции.</li>
+      <li>Выберите нужную станцию в списке.</li>
+      <li>Введите <strong>PIN‑код</strong> (с карточки/листа A4 из коробки) и
+          нажмите <strong>«OK»</strong>.</li>
+    </ol>
+
+    <!-- Edit current configuration -->
+    <img src="IMG_URL_ABB_CFG_EDIT"
+         alt="Кнопка «Edit current configuration»"
+         class="guide-image">
+    <div class="guide-image-caption">
+      5 рис. Переход к редактированию текущей конфигурации станции.
+    </div>
+
+    <h3>6. Подключение к станции и начало редактирования</h3>
+    <ol>
+      <li>Нажмите <strong>«Edit current configuration»</strong>.</li>
+      <li>Подождите около <strong>1 минуты</strong>, пока телефон подключится к станции.</li>
+      <li>Успешное подключение обычно сопровождается двумя звуковыми сигналами
+          (двойной «beep»).</li>
+      <li>При первом подключении может открыться краткое руководство –
+          нажмите <strong>«OK»</strong>, чтобы продолжить.</li>
+    </ol>
+
+    <!-- Firmware section -->
+    <img src="IMG_URL_ABB_CFG_FIRMWARE"
+         alt="Обновление прошивки станции ABB Terra AC"
+         class="guide-image">
+    <div class="guide-image-caption">
+      6 рис. Раздел «Firmware» – проверка и установка обновлений ПО.
+    </div>
+
+    <h3>7. Обновление прошивки (Firmware) – обязательно!</h3>
+    <ol>
+      <li>Перейдите в раздел <strong>«Firmware»</strong>.</li>
+      <li>Если доступна новая версия ПО:
+        <ul>
+          <li>нажмите <strong>«Download»</strong> для загрузки,</li>
+          <li>затем <strong>«Install on charger»</strong> для установки на станцию.</li>
+        </ul>
+      </li>
+      <li>Процесс обновления занимает примерно <strong>5 минут</strong>.
+          Не отключайте питание и не закрывайте приложение во время обновления.</li>
+      <li>Повторяйте проверку, пока не перестанут отображаться доступные обновления.</li>
+    </ol>
+
+    <!-- Connections -->
+    <img src="IMG_URL_ABB_CFG_CONNECTIONS"
+         alt="Настройки сети в разделе «Connections»"
+         class="guide-image">
+    <div class="guide-image-caption">
+      7 рис. Раздел «Connections» – выбор способа подключения к сети.
+    </div>
+
+    <h3>8. Настройка сети (раздел «Connections»)</h3>
+    <ol>
+      <li>На главном экране конфигурации выберите раздел
+          <strong>«Connections»</strong>.</li>
+      <li>Выберите нужный способ подключения к Интернету:
+        <ul>
+          <li><strong>Wi‑Fi</strong> – введите SSID и пароль (только 2,4 ГГц),</li>
+          <li><strong>Ethernet</strong> – проводное подключение через RJ45,</li>
+          <li><strong>4G</strong> – при наличии модуля 4G и активной SIM‑карты.</li>
+        </ul>
+      </li>
+      <li>При необходимости пролистайте верхнее меню вправо, чтобы увидеть
+          другие разделы настроек.</li>
+    </ol>
+
+    <!-- Free Vending -->
+    <img src="IMG_URL_ABB_CFG_FREE_VENDING"
+         alt="Настройка режима свободной зарядки (Free Vending)"
+         class="guide-image">
+    <div class="guide-image-caption">
+      8 рис. Раздел «Free vending» – свободный доступ или авторизация.
+    </div>
+
+    <h3>9. Режим свободного доступа (Free Vending)</h3>
+    <ol>
+      <li>Перейдите в раздел <strong>«Free vending»</strong>.</li>
+      <li>Если станция установлена в <strong>закрытом частном месте</strong>
+          (например, частный гараж), можно <strong>включить</strong> Free vending,
+          чтобы зарядка начиналась сразу после подключения кабеля.</li>
+      <li>Если станция в <strong>общем доступе</strong> (например, подземная
+          парковка многоквартирного дома), рекомендуется
+          <strong>отключить</strong> Free vending, чтобы зарядка требовала
+          авторизации (приложение, RFID и т. п.).</li>
+    </ol>
+
+    <!-- OCPP -->
+    <img src="IMG_URL_ABB_CFG_OCPP"
+         alt="Настройки OCPP-сервера"
+         class="guide-image">
+    <div class="guide-image-caption">
+      9 рис. Раздел «OCPP Server» – настройки подключения к серверу управления.
+    </div>
+
+    <h3>10. Настройки OCPP Server</h3>
+    <ol>
+      <li>Раздел <strong>«OCPP Server»</strong> обычно <strong>не требует изменений</strong>,
+          если это не указано в проектной документации или техническом задании.</li>
+      <li>Эти параметры меняются при подключении станции к
+          <strong>административной системе</strong> (back‑end/OCPP‑сервер).</li>
+    </ol>
+
+    <!-- Energy Management -->
+    <img src="IMG_URL_ABB_CFG_ENERGY"
+         alt="Раздел «Energy Management»"
+         class="guide-image">
+    <div class="guide-image-caption">
+      10 рис. Раздел «Energy Management» – настройка токов и DLM.
+    </div>
+
+    <h3>11. Энергетический менеджмент (Energy Management)</h3>
+    <ol>
+      <li>Перейдите в раздел <strong>«Energy Management»</strong>.</li>
+      <li>Верхняя шкала – <strong>номинал автомата</strong>, защищающего кабель станции
+          (например, 16 A, 32 A).</li>
+      <li>Нижняя шкала – <strong>максимальный ток, отдаваемый автомобилю</strong>
+          станцией Terra AC по каждой фазе.</li>
+      <li>Если установлен <strong>динамический контроллер нагрузки (DLM)</strong>,
+          включите режим <strong>Modbus / DLM</strong> (конкретная опция зависит
+          nuo programinės įrangos versijos).</li>
+    </ol>
+
+    <!-- Schedule -->
+    <img src="IMG_URL_ABB_CFG_SCHEDULE"
+         alt="Раздел «Schedule» — расписание зарядки"
+         class="guide-image">
+    <div class="guide-image-caption">
+      11 рис. Раздел «Schedule» – настройка расписания зарядки.
+    </div>
+
+    <h3>12. Расписание зарядки (Schedule)</h3>
+    <ol>
+      <li>Перейдите в раздел <strong>«Schedule»</strong>, если владелец станции
+          хочет использовать расписание.</li>
+      <li>При необходимости:
+        <ul>
+          <li>укажите время начала и окончания зарядки,</li>
+          <li>выберите дни недели, когда расписание активно,</li>
+          <li>задайте максимальный ток в рамках этого расписания,</li>
+          <li>нажмите <strong>«ADD»</strong> и затем <strong>«Save»</strong>.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- Confirm Configuration -->
+    <img src="IMG_URL_ABB_CFG_CONFIRM"
+         alt="Подтверждение конфигурации станции"
+         class="guide-image">
+    <div class="guide-image-caption">
+      12 рис. Кнопка «CONFIRM CONFIGURATION» и передача настроек в станцию.
+    </div>
+
+    <h3>13. Подтверждение и сохранение конфигурации</h3>
+    <ol>
+      <li>Нажмите <strong>«CONFIRM CONFIGURATION»</strong> для применения настроек.</li>
+      <li>Подождите, пока конфигурация будет полностью передана в станцию
+          (обычно около 1 минуты).</li>
+      <li>Если появляется ошибка, нажмите <strong>«RETRY»</strong>. Если ошибка
+          повторяется в разделе Energy Management – проверьте подключение и
+          конфигурацию DLM‑контроллера.</li>
+    </ol>
+
+    <!-- Done -->
+    <img src="IMG_URL_ABB_CFG_DONE"
+         alt="Конфигурация завершена"
+         class="guide-image">
+    <div class="guide-image-caption">
+      13 рис. Экран успешного завершения конфигурации («DONE»).
+    </div>
+
+    <h3>14. Завершение и рекомендация по перезагрузке</h3>
+    <ol>
+      <li>После успешной конфигурации нажмите <strong>«DONE»</strong>.</li>
+      <li>Рекомендуется выполнить <strong>перезагрузку станции</strong> –
+          кратковременно выключить и снова включить автоматический выключатель,
+          питающий Terra AC (10–15 секунд паузы).</li>
+      <li>После перезапуска выполнить <strong>тестовую зарядку</strong>, чтобы
+          убедиться, что все настройки (авторизация, расписание, DLM и т. д.)
+          работают корректно.</li>
+    </ol>
+
+    <p style="margin-top:1.5rem;">
+      <a href="index.html">← Вернуться к списку руководств ABB (RU)</a>
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      © <span id="year"></span> Руководства по зарядным станциям
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
