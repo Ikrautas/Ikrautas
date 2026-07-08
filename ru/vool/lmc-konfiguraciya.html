@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Vool LMC – руководство по монтажу и конфигурации</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Руководства по зарядным станциям</a>
+    </div>
+    <nav class="main-nav">
+      <a href="../index.html#brands">Производители</a>
+    </nav>
+    <div class="lang-switch">
+      <a href="../../vool/lmc-konfiguravimas.html">LT</a>
+      <span class="lang-sep">/</span>
+      <a href="lmc-konfiguraciya.html" class="lang-active">RU</a>
+    </div>
+  </div>
+</header>
+
+<section class="about guide-section">
+  <div class="container">
+    <h2>Vool LMC (Load Management Controller) – монтаж и конфигурация</h2>
+    <p>
+      <strong>Vool LMC</strong> используется для динамического управления
+      нагрузкой: ограничения суммарного тока ввода и распределения мощности
+      между несколькими станциями Vool. Здесь описаны монтаж LMC в щите,
+      подключение к счётчику/CT и базовая конфигурация.
+    </p>
+
+    <!-- 1) LMC overview -->
+    <img src="IMG_URL_VOOL_LMC_OVERVIEW"
+         alt="Модуль Vool LMC"
+         class="guide-image">
+    <div class="guide-image-caption">
+      1 рис. Модуль Vool LMC (Load Management Controller).
+    </div>
+
+    <h3>1. Монтаж LMC в распределительном щите</h3>
+    <ol>
+      <li><strong>Место установки</strong><br>
+        LMC монтируется в <strong>распределительном щите на DIN‑рейку</strong>.
+        Выберите место с удобным доступом для монтажа и обслуживания.
+      </li>
+      <li><strong>Фиксация на DIN‑рейке</strong><br>
+        Зафиксируйте модуль LMC на DIN‑рейке до характерного щелчка.
+        Убедитесь, что он не люфтит и установлен ровно.
+      </li>
+    </ol>
+
+    <!-- 2) LMC in panel -->
+    <img src="IMG_URL_VOOL_LMC_IN_PANEL"
+         alt="Установка Vool LMC в распределительном щите"
+         class="guide-image">
+    <div class="guide-image-caption">
+      2 рис. LMC, установленный в распределительном щите.
+    </div>
+
+    <h3>2. Подключение питания LMC</h3>
+    <ol>
+      <li>Подключите питание LMC (обычно 230 В AC) к соответствующим клеммам:
+        <ul>
+          <li><strong>L</strong> – фаза,</li>
+          <li><strong>N</strong> – нейтраль,</li>
+          <li><strong>PE</strong> – защитный проводник (если предусмотрен).</li>
+        </ul>
+      </li>
+      <li>Рекомендуется использовать <strong>отдельный автоматический выключатель</strong>
+          (например, C6–C10) для защиты цепи питания LMC.</li>
+    </ol>
+
+    <!-- 3) LMC power terminals -->
+    <img src="IMG_URL_VOOL_LMC_POWER"
+         alt="Клеммы питания модуля Vool LMC"
+         class="guide-image">
+    <div class="guide-image-caption">
+      3 рис. Клеммы питания LMC.
+    </div>
+
+    <h3>3. Подключение счётчика или трансформаторов тока (CT)</h3>
+    <ol>
+      <li><strong>Вариант со счётчиком</strong><br>
+        Если LMC работает с внешним <strong>умным счётчиком</strong>:
+        <ul>
+          <li>установите счётчик на вводе здания,</li>
+          <li>подключите линию связи (например, RS‑485 / Modbus A/B)
+              от счётчика к LMC, соблюдая полярность.</li>
+        </ul>
+      </li>
+      <li><strong>Вариант с CT</strong><br>
+        Если LMC использует <strong>счётчики тока (CT)</strong>:
+        <ul>
+          <li>установите CT на фазных проводах ввода (L1/L2/L3)
+              в соответствии с направлением тока (стрелка «→ нагрузка»),</li>
+          <li>подключите вторичные обмотки CT к клеммам LMC согласно схеме
+              (S1/S2, А/В и т. п.).</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- 4) LMC meter / CT connection -->
+    <img src="IMG_URL_VOOL_LMC_METER"
+         alt="Схема подключения Vool LMC к счётчику или CT"
+         class="guide-image">
+    <div class="guide-image-caption">
+      4 рис. Подключение LMC к измерительным элементам (счётчик/CT).
+    </div>
+
+    <p style="background-color:#fff3cd; border-left:4px solid #ffc107; padding:0.75rem; border-radius:0.25rem;">
+      <strong>⚠️ Важно:</strong> неправильное направление CT или перепутанная полярность
+      линий связи приведут к некорректным измерениям и неверной работе
+      ограничения мощности. Всегда сверяйтесь со схемой Vool.
+    </p>
+
+    <h3>4. Подключение LMC к станциям Vool</h3>
+    <ol>
+      <li>Проложите коммуникационный кабель (RS‑485 / Ethernet – согласно
+          документации Vool) между LMC и станциями Vool.</li>
+      <li>Чаще всего используется последовательное соединение:
+        <ul>
+          <li><strong>LMC → Vool #1 → Vool #2 → Vool #3</strong> и т. д.</li>
+        </ul>
+      </li>
+      <li>Подключите кабель к клеммам связи LMC и к соответствующим портам
+          станций Vool (A/B или LAN‑порт – по спецификации).</li>
+      <li>Если используется RS‑485 – в последней станции в цепочке включите
+          терминатор (оконечивающий резистор), если этого требует схема.</li>
+    </ol>
+
+    <!-- 5) LMC to Vool communication -->
+    <img src="IMG_URL_VOOL_LMC_TO_VOOL"
+         alt="Коммуникационный кабель между LMC и станциями Vool"
+         class="guide-image">
+    <div class="guide-image-caption">
+      5 рис. Подключение LMC к нескольким станциям Vool.
+    </div>
+
+    <h3>5. Первичная конфигурация LMC</h3>
+    <ol>
+      <li><strong>Включение LMC</strong><br>
+        Включите питание LMC и дождитесь его полной загрузки.</li>
+      <li><strong>Доступ к интерфейсу LMC</strong><br>
+        Подключитесь к LMC:
+        <ul>
+          <li>через приложение Vool,</li>
+          <li>или через веб‑интерфейс (в зависимости nuo modelio).</li>
+        </ul>
+      </li>
+      <li><strong>Основные параметры ввода</strong><br>
+        В интерфейсе LMC задайте:
+        <ul>
+          <li><strong>Max grid current / Grid limit</strong> – максимальный ток
+              ввода (номинал вводного автомата здания),</li>
+          <li><strong>резерв мощности</strong> (если есть такая опция) – часть
+              тока, оставляемая на прочие нагрузки здания.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- 6) LMC config UI -->
+    <img src="IMG_URL_VOOL_LMC_UI"
+         alt="Интерфейс конфигурации Vool LMC"
+         class="guide-image">
+    <div class="guide-image-caption">
+      6 рис. Пример интерфейса настройки параметров LMC.
+    </div>
+
+    <h3>6. Добавление станций Vool в систему LMC</h3>
+    <ol>
+      <li>В интерфейсе LMC откройте раздел с подключёнными устройствами
+          (например, <strong>«Chargers»</strong> или <strong>«Devices»</strong>).</li>
+      <li>Добавьте каждую станцию Vool:
+        <ul>
+          <li>назначьте ей имя/ID,</li>
+          <li>при необходимости укажите, к какой фазной группе или линии
+              она относится.</li>
+        </ul>
+      </li>
+      <li>Убедитесь, что все станции отображаются как <strong>Online / Connected</strong>
+          (нет ошибок связи).</li>
+    </ol>
+
+    <!-- 7) LMC stations list -->
+    <img src="IMG_URL_VOOL_LMC_STATIONS"
+         alt="Список станций Vool в интерфейсе LMC"
+         class="guide-image">
+    <div class="guide-image-caption">
+      7 рис. Список станций Vool, зарегистрированных в LMC.
+    </div>
+
+    <h3>7. Тестирование работы LMC</h3>
+    <ol>
+      <li><strong>Тест с одной станцией</strong><br>
+        Подключите к одной станции Vool электромобиль и начните зарядку.
+        Наблюдайте за показаниями тока/мощности в интерфейсе LMC.</li>
+      <li><strong>Тест с несколькими станциями</strong><br>
+        Подключите одновременно несколько EV к разным станциям Vool:
+        <ul>
+          <li>проверьте, что суммарный ток не превышает заданный лимит ввода,</li>
+          <li>убедитесь, что LMC корректно распределяет мощность между станциями.</li>
+        </ul>
+      </li>
+      <li><strong>Реакция на изменение нагрузки дома</strong><br>
+        Включите дополнительные бытовые нагрузки (плита, бойлер и т. п.)
+        и убедитесь, что LMC уменьшает ток зарядки, защищая ввод.</li>
+    </ol>
+
+    <p style="background-color:#d4edda; border-left:4px solid #28a745; padding:0.75rem; border-radius:0.25rem;">
+      <strong>✓ Система Vool LMC настроена:</strong> если тесты проходят без
+      перегрузки ввода и ошибок связи, динамическое управление нагрузкой
+      работает корректно.
+    </p>
+
+    <p style="margin-top:1.5rem;">
+      <a href="index.html">← Вернуться к списку руководств Vool (RU)</a>
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      © <span id="year"></span> Руководства по зарядным станциям
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
