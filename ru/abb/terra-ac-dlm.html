@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>ABB Terra AC – динамическое управление мощностью (DLM)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Руководства по зарядным станциям</a>
+    </div>
+    <nav class="main-nav">
+      <a href="../index.html#brands">Производители</a>
+    </nav>
+    <div class="lang-switch">
+      <a href="../../abb/terra-ac-dlm.html">LT</a>
+      <span class="lang-sep">/</span>
+      <a href="terra-ac-dlm.html" class="lang-active">RU</a>
+    </div>
+  </div>
+</header>
+
+<section class="about guide-section">
+  <div class="container">
+    <h2>ABB Terra AC – динамическое управление мощностью (DLM)</h2>
+    <p>
+      Динамическое управление мощностью <strong>(DLM – Dynamic Load Management)</strong>
+      позволяет автоматически распределять доступную мощность между одной или
+      несколькими станциями <strong>ABB Terra AC</strong> и другими нагрузками
+      в здании. Ниже описаны общий принцип работы, монтаж и базовая
+      конфигурация DLM c Terra AC.
+    </p>
+
+    <h3>1. Принцип работы DLM</h3>
+    <p>
+      DLM измеряет <strong>фактическую нагрузку</strong> на вводе здания (через
+      внешний счётчик или трансформаторы тока) и на основе этой информации
+      ограничивает ток зарядки электромобилей, чтобы
+      <strong>не превышать допустимый предел</strong> по вводу.
+    </p>
+
+    <!-- 1) Schema / overview -->
+    <img src="IMG_URL_ABB_DLM_SCHEME"
+         alt="Общий принцип работы DLM с Terra AC"
+         class="guide-image">
+    <div class="guide-image-caption">
+      1 рис. Принцип работы DLM: ввод здания, счётчик и станции Terra AC.
+    </div>
+
+    <h3>2. Монтаж DLM‑модуля и счётчика/датчиков</h3>
+    <ol>
+      <li><strong>Место установки</strong><br>
+        DLM‑модуль и связанные с ним устройства (счётчик, трансформаторы тока)
+        обычно устанавливаются в <strong>главном распределительном щите</strong>
+        здания на DIN‑рейке.
+      </li>
+      <li><strong>Питание DLM‑модуля</strong><br>
+        Подключите питание к DLM‑модулю согласно схеме ABB (часто 230 В AC).
+        Рекомендуется отдельный автоматический выключатель для защиты модуля.
+      </li>
+      <li><strong>Счётчик / трансформаторы тока (CT)</strong><br>
+        Если используется отдельный счётчик:
+        <ul>
+          <li>установите его на вводе здания (L1/L2/L3),</li>
+          <li>подключите его измерительные выходы к DLM‑модулю.</li>
+        </ul>
+        Если применяются CT:
+        <ul>
+          <li>разместите CT на фазных проводах ввода,</li>
+          <li>подключите вторичные обмотки CT к клеммам DLM‑модуля
+              (соблюдая полярность и направление тока).</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- 2) Nuotrauka – DLM modulis / CT skydelyje -->
+    <img src="IMG_URL_ABB_DLM_IN_PANEL"
+         alt="Установка DLM и трансформаторов тока в щите"
+         class="guide-image">
+    <div class="guide-image-caption">
+      2 рис. Расположение DLM и трансформаторов тока в распределительном щите.
+    </div>
+
+    <h3>3. Соединение DLM с ABB Terra AC</h3>
+    <ol>
+      <li><strong>Коммуникационный кабель</strong><br>
+        Проложите коммуникационный кабель (например, <strong>RS‑485</strong> или
+        Ethernet – в зависимости nuo ABB sprendimo) между DLM‑модулем
+        и станциями Terra AC.
+      </li>
+      <li><strong>Топология</strong><br>
+        Чаще всего используется топология <strong>«линейка»</strong>:
+        DLM → Terra AC #1 → Terra AC #2 → и т. д.
+      </li>
+      <li><strong>Клеммы связи</strong><br>
+        Подключите линии A/B (если RS‑485) к соответствующим клеммам на DLM
+        и на Terra AC, соблюдая маркировку ABB.
+      </li>
+      <li><strong>Оконечивание линии</strong><br>
+        На последнем устройстве в цепочке включите <strong>оконечивающий
+        резистор</strong> (обычно это 120 Ω), если это требуется по документации.
+      </li>
+    </ol>
+
+    <!-- 3) Nuotrauka – ryšio kabelis tarp DLM ir Terra AC -->
+    <img src="IMG_URL_ABB_DLM_COMM"
+         alt="Коммуникационное подключение между DLM и Terra AC"
+         class="guide-image">
+    <div class="guide-image-caption">
+      3 рис. Пример коммутационного кабеля и клемм связи между DLM и Terra AC.
+    </div>
+
+    <h3>4. Базовая конфигурация DLM</h3>
+    <p>
+      Конфигурация может выполняться:
+    </p>
+    <ul>
+      <li>через интерфейс <strong>TerraConfig</strong>,</li>
+      <li>или через отдельный конфигурационный инструмент ABB (в зависимости
+          nuo konkretaus DLM modulio).</li>
+    </ul>
+
+    <ol>
+      <li><strong>Общий лимит мощности</strong><br>
+        Установите <strong>общий лимит по току/мощности</strong> для ввода
+        (например, номинал вводного автомата: 40 A, 63 A, 80 A и т. д.).
+      </li>
+      <li><strong>Количество станций</strong><br>
+        Укажите, сколько станций Terra AC будет участвовать в DLM.
+      </li>
+      <li><strong>Режимы Master / Slave</strong><br>
+        В конфигурации Terra AC:
+        <ul>
+          <li>одну станцию задайте как <strong>«Master»</strong> (главная),</li>
+          <li>остальные как <strong>«Slave»</strong> (ведомые),</li>
+          <li>убедитесь, что все станции имеют <strong>уникальные ID</strong>
+              (адреса в сети DLM/Modbus).</li>
+        </ul>
+      </li>
+      <li><strong>Приоритеты</strong><br>
+        Если DLM поддерживает приоритетную выдачу мощности, задайте
+        <strong>приоритетные станции</strong> (например, для экстренных служб
+        или VIP‑парковки).
+      </li>
+    </ol>
+
+    <!-- 4) Nuotrauka – DLM konfigūracijos UI / nustatymai -->
+    <img src="IMG_URL_ABB_DLM_UI"
+         alt="Пример интерфейса конфигурации DLM для Terra AC"
+         class="guide-image">
+    <div class="guide-image-caption">
+      4 рис. Пример интерфейса конфигурации DLM‑параметров для Terra AC.
+    </div>
+
+    <h3>5. Базовые настройки на стороне Terra AC</h3>
+    <ol>
+      <li><strong>Раздел Energy Management</strong><br>
+        В TerraConfig для каждой Terra AC перейдите в раздел
+        <strong>«Energy Management»</strong>:
+        <ul>
+          <li>установите режим работы с DLM/Modbus (если есть отдельный флаг),</li>
+          <li>введите лимит мощности/тока станции в соответствии с
+              проектными требованиями и лимитами DLM.</li>
+        </ul>
+      </li>
+      <li><strong>Проверка связи</strong><br>
+        Убедитесь, что Terra AC <strong>видит DLM‑модуль</strong>:
+        нет ошибок связи, и при изменении нагрузки в доме DLM корректно
+        регулирует ток зарядки.
+      </li>
+    </ol>
+
+    <h3>6. Тестирование системы DLM</h3>
+    <ol>
+      <li><strong>Одиночная станция</strong><br>
+        Подключите один электромобиль и начните зарядку. Наблюдайте за
+        показаниями тока/мощности. Убедитесь, что станция не превышает
+        установленные DLM‑лимиты.
+      </li>
+      <li><strong>Несколько станций</strong><br>
+        При наличии нескольких Terra AC подключите к ним одновременно
+        два и более электромобиля:
+        <ul>
+          <li>проверьте, как делится мощность между станциями,</li>
+          <li>убедитесь, что суммарная нагрузка не превышает лимит ввода.</li>
+        </ul>
+      </li>
+      <li><strong>Реакция на изменение нагрузки здания</strong><br>
+        Имитируйте включение крупных бытовых нагрузок (плита, бойлер и т. д.)
+        и убедитесь, что DLM снижает ток зарядки, защищая главный ввод.
+      </li>
+    </ol>
+
+    <p style="background-color:#d4edda; border-left:4px solid #28a745; padding:0.75rem; border-radius:0.25rem;">
+      <strong>✓ Система DLM настроена:</strong> если тестовые сценарии проходят без
+      ошибок и отключений, динамическое управление мощностью для ABB Terra AC
+      работает корректно.
+    </p>
+
+    <p style="margin-top:1.5rem;">
+      <a href="index.html">← Вернуться к списку руководств ABB (RU)</a>
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      © <span id="year"></span> Руководства по зарядным станциям
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
