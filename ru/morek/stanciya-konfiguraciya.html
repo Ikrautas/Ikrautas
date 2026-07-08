@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Morek – руководство по настройке умной AC станции</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Руководства по зарядным станциям</a>
+    </div>
+    <nav class="main-nav">
+      <a href="../index.html#brands">Производители</a>
+    </nav>
+    <div class="lang-switch">
+      <a href="../../morek/index.html">LT</a>
+      <span class="lang-sep">/</span>
+      <a href="stanciya-konfiguraciya.html" class="lang-active">RU</a>
+    </div>
+  </div>
+</header>
+
+<section class="about guide-section">
+  <div class="container">
+    <h2>Руководство по настройке умной станции Morek AC</h2>
+    <p>
+      В этом руководстве описаны основные шаги по <strong>настройке умной станции
+      Morek AC</strong>: подключение к ней, настройка сети, управление
+      пользователями, ограничение мощности и параметры DLM. Конкретные значения
+      параметров и пункты меню могут отличаться в зависимости от модели станции
+      и версии программного обеспечения.
+    </p>
+
+    <!-- 1) Ekranas – stoties UI / Morek EV Tool -->
+    <img src="IMG_URL_MOREK_CFG_UI"
+         alt="Интерфейс настройки станции Morek"
+         class="guide-image">
+    <div class="guide-image-caption">
+      1 рис. Интерфейс управления/настройки станции Morek (пример).
+    </div>
+
+    <h3>1. Первоначальный вход в систему</h3>
+    <ol>
+      <li><strong>Подача питания</strong><br>
+        Подключите питание к станции и дождитесь её <strong>полной загрузки</strong>
+        (индикаторы должны перейти в штатный режим, без ошибок).
+      </li>
+      <li><strong>Запуск приложения</strong><br>
+        Запустите приложение <strong>«Morek EV Tool»</strong> на своём смартфоне
+        или планшете и при первом запуске <strong>разрешите использование Bluetooth</strong>,
+        чтобы приложение могло обнаружить станцию.
+      </li>
+      <li><strong>Авторизация</strong><br>
+        Войдите в систему, используя предоставленные данные для входа (учётная
+        запись монтажника/администратора – по документации или по договорённости
+        с заказчиком/Morek).
+      </li>
+      <li><strong>Проверка серийного номера и PIN</strong><br>
+        Серийный номер, отображаемый в приложении, должен
+        <strong>совпадать с серийным номером</strong>, указанным на боковой
+        стороне станции. PIN‑код по умолчанию часто имеет значение
+        <strong>12345678</strong> (уточните в документации или с поставщиком).
+      </li>
+    </ol>
+
+    <h3>2. Сетевые настройки</h3>
+
+    <!-- 2) Network settings ekranas -->
+    <img src="IMG_URL_MOREK_CFG_NETWORK"
+         alt="Окно сетевых настроек станции Morek"
+         class="guide-image">
+    <div class="guide-image-caption">
+      2 рис. Пример окна сетевых настроек станции.
+    </div>
+
+    <ol>
+      <li><strong>Переход к сетевым настройкам</strong><br>
+        В интерфейсе станции или в приложении «Morek EV Tool» перейдите в раздел
+        <strong>«Сеть» / «Network»</strong>.
+      </li>
+      <li><strong>Способ подключения</strong><br>
+        Выберите способ подключения станции к сети/Интернету:
+        <ul>
+          <li><strong>LAN (Ethernet)</strong> – через кабель RJ45,</li>
+          <li><strong>Wi‑Fi</strong> – беспроводное подключение к маршрутизатору,</li>
+          <li><strong>4G</strong> – через модуль 4G (если установлен и настроен).</li>
+        </ul>
+      </li>
+      <li><strong>Параметры IP‑адреса</strong><br>
+        Если используется <strong>DHCP</strong> – станция автоматически получит IP‑адрес
+        от маршрутизатора. Если требуется <strong>статический IP</strong> – вручную
+        введите IP‑адрес, маску подсети, шлюз (Gateway) и DNS‑сервер.
+      </li>
+    </ol>
+
+    <h3>3. Настройки пользователей и аутентификации</h3>
+
+    <!-- 3) Users / RFID ekranas -->
+    <img src="IMG_URL_MOREK_CFG_USERS"
+         alt="Настройки пользователей и аутентификации станции Morek"
+         class="guide-image">
+    <div class="guide-image-caption">
+      3 рис. Управление пользователями / RFID в интерфейсе станции.
+    </div>
+
+    <ol>
+      <li><strong>Режим доступа</strong><br>
+        Выберите, разрешена ли зарядка:
+        <ul>
+          <li><strong>для всех пользователей</strong> (свободный доступ),</li>
+          <li>или только <strong>для авторизованных пользователей</strong>
+              (RFID, приложение и т. д.).</li>
+        </ul>
+      </li>
+      <li><strong>RFID‑ключи</strong><br>
+        Если используются RFID‑ключи:
+        <ul>
+          <li>добавьте новые идентификаторы карт/брелков,</li>
+          <li>присвойте их конкретным пользователям или группам.</li>
+        </ul>
+      </li>
+      <li><strong>Учётная запись администратора</strong><br>
+        При первом подключении к станции настройте учётную запись администратора:
+        <ul>
+          <li>установите логин и надёжный пароль,</li>
+          <li>если пароль по умолчанию – <strong>12345</strong>, обязательно
+              измените его после завершения пуско‑наладочных работ.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3>4. Ограничение мощности и настройки DLM</h3>
+
+    <!-- 4) Power / DLM settings ekranas -->
+    <img src="IMG_URL_MOREK_CFG_POWER"
+         alt="Ограничение мощности и настройки DLM"
+         class="guide-image">
+    <div class="guide-image-caption">
+      4 рис. Окно ограничения мощности / параметров DLM.
+    </div>
+
+    <ol>
+      <li><strong>Ограничение мощности при автономной работе</strong><br>
+        Если станция работает <strong>автономно</strong> (без DLM), установите
+        максимальный ток станции, например:
+        <ul>
+          <li><strong>16 А</strong>,</li>
+          <li><strong>32 А</strong>,</li>
+          <li>или другое значение в зависимости от автомата и кабеля.</li>
+        </ul>
+      </li>
+      <li><strong>Настройки DLM (динамическое управление мощностью)</strong><br>
+        Если используется DLM:
+        <ul>
+          <li>введите <strong>общее ограничение входной мощности/тока</strong>
+              для здания или линии (ограничение по вводному автомату),</li>
+          <li>определите, является ли эта станция <strong>«ведущей» (Master)</strong>
+              или <strong>«ведомой» (Slave)</strong>,</li>
+          <li>проверьте корректность подключения к DLM‑хабу или умному счётчику.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3>5. Подключение к back‑end системе / OCPP (если используется)</h3>
+
+    <!-- 5) OCPP / backend settings ekranas -->
+    <img src="IMG_URL_MOREK_CFG_OCPP"
+         alt="Настройки подключения к back‑end / OCPP"
+         class="guide-image">
+    <div class="guide-image-caption">
+      5 рис. Настройки подключения к системе бэкэнда (OCPP).
+    </div>
+
+    <ol>
+      <li><strong>Адрес сервера</strong><br>
+        Введите адрес сервера (URL) и порт для OCPP‑сервера или другой
+        платформы управления (backend).
+      </li>
+      <li><strong>Идентификатор зарядной точки</strong><br>
+        Установите <strong>идентификатор зарядной точки (Charge Point ID)</strong>,
+        который будет использоваться для идентификации станции на сервере.
+      </li>
+      <li><strong>Проверка подключения</strong><br>
+        Проверьте, успешно ли станция <strong>подключается к системе бэкэнда</strong>:
+        в интерфейсе должно отображаться состояние Online/Connected или аналогичный
+        статус без ошибок авторизации.
+      </li>
+    </ol>
+
+    <h3>6. Сохранение и проверка конфигурации</h3>
+    <ol>
+      <li><strong>Сохранение настроек</strong><br>
+        Сохраните все выполненные изменения в интерфейсе станции или
+        в приложении (кнопки <strong>Save / Apply / Confirm</strong> и т. д.).
+      </li>
+      <li><strong>Перезагрузка станции (рекомендуется)</strong><br>
+        При необходимости выполните <strong>перезагрузку станции</strong> через
+        меню или кратковременным отключением/включением питания (автомат).
+      </li>
+      <li><strong>Тестовая зарядка</strong><br>
+        Выполните тестовую зарядку и проверьте, всё ли работает в соответствии
+        с установленной логикой:
+        <ul>
+          <li>авторизация (если включена),</li>
+          <li>регулирование тока/мощности,</li>
+          <li>работа DLM (если используется),</li>
+          <li>обмен данными с back‑end системой (если подключена).</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p style="margin-top:1.5rem;">
+      <a href="index.html">← Вернуться к списку гидов Morek</a>
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      © <span id="year"></span> Руководства по зарядным станциям
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
