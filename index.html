@@ -2,9 +2,11 @@
 <html lang="lt">
 <head>
   <meta charset="UTF-8">
-  <title>Įkrautas montavimo gidai</title>
+  <title>EV įkroviklių montavimo gidai</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Mūsų stiliai -->
+  <!-- Favicon, jei turite -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Bendri stiliai -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,13 +14,21 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">
-        <a href="index.html">Įkrautas EV Įkroviklių Gidai</a>
+        <a href="index.html">EV Įkroviklių Gidai</a>
       </div>
+
       <nav class="main-nav">
         <a href="#brands">Gamintojai</a>
         <a href="#about">Apie</a>
         <a href="#contact">Kontaktai</a>
       </nav>
+
+      <!-- Kalbos perjungimas -->
+      <div class="lang-switch">
+        <a href="index.html" class="lang-active">LT</a>
+        <span class="lang-sep">/</span>
+        <a href="ru/index.html">RU</a>
+      </div>
     </div>
   </header>
 
@@ -64,28 +74,28 @@
         <!-- ABB -->
         <a href="abb/index.html" class="card">
           <h3>ABB</h3>
-          <p>Žingsnis po žingsnio instrukcijos ABB sieniniams įkrovikliams ir stotelėms.</p>
+          <p>ABB Terra AC ir kitų ABB įkroviklių montavimo ir DLM gidai.</p>
           <span class="card-link">Peržiūrėti gidus →</span>
         </a>
 
         <!-- Vool -->
         <a href="vool/index.html" class="card">
           <h3>Vool</h3>
-          <p>Vool namų ir komercinių įkroviklių montavimo gidai.</p>
+          <p>Vool stotelių montavimas, konfigūravimas ir LMC nustatymai.</p>
           <span class="card-link">Peržiūrėti gidus →</span>
         </a>
 
         <!-- NexBlue -->
         <a href="nexblue/index.html" class="card">
           <h3>NexBlue</h3>
-          <p>NexBlue įkroviklių pajungimo ir sukonfigūravimo žingsniai.</p>
+          <p>NexBlue stotelių montavimas, konfigūravimas ir DLM sprendimai.</p>
           <span class="card-link">Peržiūrėti gidus →</span>
         </a>
 
         <!-- Elinta -->
         <a href="elinta/index.html" class="card">
           <h3>Elinta</h3>
-          <p>Elinta EV įkroviklių pajungimo, nustatymų ir paleidimo gidai.</p>
+          <p>HomeBox Slim montavimas, konfigūravimas ir dinaminis galios valdymas.</p>
           <span class="card-link">Peržiūrėti gidus →</span>
         </a>
       </div>
@@ -97,10 +107,10 @@
     <div class="container">
       <h2>Apie šį puslapį</h2>
       <p>
-        Čia pateikiami praktiški EV įkroviklių montavimo gidai dažniausiai
-        sutinkamai įrangai. Informacija skirta kvalifikuotiems elektrikams ir
-        montuotojams. Visada vadovaukitės galiojančiais teisės aktais ir
-        oficialiomis gamintojų instrukcijomis.
+        Čia pateikiami praktiški EV įkroviklių montavimo ir konfigūravimo gidai
+        dažniausiai sutinkamai įrangai. Informacija skirta kvalifikuotiems
+        elektrikams ir montuotojams. Visada vadovaukitės galiojančiais teisės
+        aktais ir oficialiomis gamintojų instrukcijomis.
       </p>
     </div>
   </section>
@@ -112,11 +122,11 @@
         <h3>Kontaktai</h3>
         <p>
           Jei pastebėjote netikslumų giduose arba turite pasiūlymų patobulinimams,
-          parašykite į mykolas@įkrautas.lt.
+          parašykite per GitHub (atverkite „issue“ šiame repozitoriuje).
         </p>
       </div>
       <div class="footer-copy">
-        © <span id="year"></span> Visa informacija saugoma Įkrautas
+        © <span id="year"></span> EV Įkroviklių Gidai
       </div>
     </div>
   </footer>
