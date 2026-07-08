@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Vool – руководство по конфигурации станции</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Руководства по зарядным станциям</a>
+    </div>
+    <nav class="main-nav">
+      <a href="../index.html#brands">Производители</a>
+    </nav>
+    <div class="lang-switch">
+      <a href="../../vool/stoteles-konfiguravimas.html">LT</a>
+      <span class="lang-sep">/</span>
+      <a href="stanciya-konfiguraciya.html" class="lang-active">RU</a>
+    </div>
+  </div>
+</header>
+
+<section class="about guide-section">
+  <div class="container">
+    <h2>Руководство по конфигурации станции Vool</h2>
+    <p>
+      В этом руководстве описано, как выполнить настройку зарядной станции
+      <strong>Vool</strong> после монтажа: подключиться к станции, задать сетевые
+      параметры, настроить доступ пользователей и ограничения мощности. Структура
+      основана на документе «VOOL stotelės ir LMC diegimas».
+    </p>
+
+    <!-- 1) App / UI overview -->
+    <img src="IMG_URL_VOOL_APP_OVERVIEW"
+         alt="Интерфейс настройки станции Vool (приложение/web)"
+         class="guide-image">
+    <div class="guide-image-caption">
+      1 рис. Интерфейс управления/настройки станции Vool.
+    </div>
+
+    <h3>1. Первоначальное подключение к станции</h3>
+    <ol>
+      <li><strong>Включение питания</strong><br>
+        Включите питание станции (автомат в щите) и дождитесь полной загрузки
+        (индикация «готовности», без ошибок).
+      </li>
+      <li><strong>Запуск приложения или веб‑интерфейса</strong><br>
+        Откройте <strong>приложение Vool</strong> или веб‑интерфейс (в зависимости
+        от того, что предусмотрено документацией к вашей модели).
+      </li>
+      <li><strong>Вход в аккаунт</strong><br>
+        Войдите под своей учётной записью Vool (e‑mail и пароль)
+        или используйте технический аккаунт, выданный монтажнику.
+      </li>
+    </ol>
+
+    <!-- 2) Login screen -->
+    <img src="IMG_URL_VOOL_LOGIN"
+         alt="Окно входа в Vool аккаунт"
+         class="guide-image">
+    <div class="guide-image-caption">
+      2 рис. Пример окна входа в аккаунт Vool.
+    </div>
+
+    <h3>2. Выбор или добавление зарядной станции</h3>
+    <ol>
+      <li>В приложении выберите пункт <strong>«Add charger» / «Добавить станцию»</strong>
+          или откройте уже созданную станцию в списке, если она была добавлена
+          ранее.</li>
+      <li>Если приложение запрашивает доступ к <strong>Bluetooth</strong> или
+          <strong>данным о местоположении</strong>, предоставьте его для
+          автоматического обнаружения станции.</li>
+      <li>Убедитесь, что выбранная в списке станция соответствует фактически
+          установленной (по серийному номеру или названию).</li>
+    </ol>
+
+    <!-- 3) Chargers list -->
+    <img src="IMG_URL_VOOL_CHARGER_LIST"
+         alt="Список зарядных станций Vool в приложении"
+         class="guide-image">
+    <div class="guide-image-caption">
+      3 рис. Список станций Vool в приложении.
+    </div>
+
+    <h3>3. Настройка сети (Network / Connectivity)</h3>
+    <ol>
+      <li>Перейдите в раздел <strong>«Network» / «Connectivity»</strong>.</li>
+      <li>Выберите способ подключения станции Vool к сети:
+        <ul>
+          <li><strong>Wi‑Fi</strong> – беспроводная связь с роутером,</li>
+          <li><strong>Ethernet</strong> – проводное подключение через RJ45,</li>
+          <li><strong>4G</strong> – через мобильный модем (если установлен).</li>
+        </ul>
+      </li>
+      <li>При выборе Wi‑Fi:
+        <ul>
+          <li>выберите SSID (имя сети),</li>
+          <li>введите пароль от Wi‑Fi,</li>
+          <li>сохраните настройки.</li>
+        </ul>
+      </li>
+      <li>При выборе Ethernet:
+        <ul>
+          <li>убедитесь, что роутер/коммутатор выдаёт IP по DHCP
+              или задайте статический IP в настройках станции.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- 4) Network screen -->
+    <img src="IMG_URL_VOOL_NETWORK"
+         alt="Настройки сети станции Vool"
+         class="guide-image">
+    <div class="guide-image-caption">
+      4 рис. Пример окна сетевых настроек станции.
+    </div>
+
+    <h3>4. Настройки мощности и ограничений тока</h3>
+    <ol>
+      <li>В меню станции найдите раздел, связанный с <strong>мощностью</strong> /
+          <strong>ограничением тока</strong> (например, «Power», «Load Management»).</li>
+      <li>Установите параметры:
+        <ul>
+          <li><strong>максимальный ток станции</strong> (например, 16 A, 32 A),</li>
+          <li><strong>номинал автомата, защищающего кабель</strong>, если есть
+              отдельное поле для этого.</li>
+        </ul>
+      </li>
+      <li>Если станция будет управляться через <strong>Vool LMC</strong>,
+          обычно задаётся только локальный максимум, а динамическая часть
+          будет приходить от LMC.</li>
+    </ol>
+
+    <!-- 5) Power / current limit -->
+    <img src="IMG_URL_VOOL_POWER"
+         alt="Окно настройки максимального тока станции Vool"
+         class="guide-image">
+    <div class="guide-image-caption">
+      5 рис. Пример ограничения тока/мощности в интерфейсе Vool.
+    </div>
+
+    <h3>5. Пользователи и доступ (Users / Access / RFID)</h3>
+    <ol>
+      <li>Перейдите в раздел <strong>«Users» / «Access» / «RFID»</strong>
+          (название зависит nuo app versijos).</li>
+      <li>Выберите режим доступа:
+        <ul>
+          <li><strong>свободная зарядка</strong> – без аутентификации,</li>
+          <li>или только <strong>авторизованные пользователи</strong> –
+              через приложение, RFID‑карты и т. п.</li>
+        </ul>
+      </li>
+      <li>Если используются RFID:
+        <ul>
+          <li>добавьте новые RFID‑карты/брелки,</li>
+          <li>привяжите их к конкретным пользователям.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- 6) Users / access -->
+    <img src="IMG_URL_VOOL_USERS"
+         alt="Управление пользователями и доступом в приложении Vool"
+         class="guide-image">
+    <div class="guide-image-caption">
+      6 рис. Управление пользователями / доступом (RFID, аккаунты).
+    </div>
+
+    <h3>6. Расписания и дополнительные функции (Schedule, Tariffs)</h3>
+    <ol>
+      <li>При наличии функции <strong>расписания зарядки</strong> перейдите
+          в раздел «Schedule» / «Timers»:
+        <ul>
+          <li>установите время начала и окончания зарядки,</li>
+          <li>выберите дни недели, для которых действует расписание,</li>
+          <li>при необходимости задайте максимальный ток в заданный интервал.</li>
+        </ul>
+      </li>
+      <li>Если реализованы тарифы (днём/ночью, разное ограничение мощности)
+          – настройте их в соответствии с тарифным планом владельца.</li>
+    </ol>
+
+    <!-- 7) Schedule -->
+    <img src="IMG_URL_VOOL_SCHEDULE"
+         alt="Настройка расписания зарядки в приложении Vool"
+         class="guide-image">
+    <div class="guide-image-caption">
+      7 рис. Пример настройки расписания зарядки.
+    </div>
+
+    <h3>7. Сохранение настроек и тестирование</h3>
+    <ol>
+      <li>Сохраните все изменённые параметры (кнопка <strong>Save / Apply</strong>
+          или аналогичная).</li>
+      <li>Если это требуется – перезапустите станцию Vool через меню или
+          кратким выключением/включением автомата.</li>
+      <li>Выполните <strong>тестовую зарядку</strong>:
+        <ul>
+          <li>убедитесь, что станция подключена к Интернету (если требуется),</li>
+          <li>проверьте работу аутентификации (если она включена),</li>
+          <li>убедитесь, что фактический ток не превышает заданные лимиты.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p style="margin-top:1.5rem;">
+      <a href="index.html">← Вернуться к списку руководств Vool (RU)</a>
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      © <span id="year"></span> Руководства по зарядным станциям
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
