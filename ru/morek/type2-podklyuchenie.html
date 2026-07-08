@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Morek – подключение кабеля Type 2 к умной AC станции</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="../index.html">Руководства по зарядным станциям</a>
+    </div>
+    <nav class="main-nav">
+      <a href="../index.html#brands">Производители</a>
+    </nav>
+    <div class="lang-switch">
+      <a href="../../morek/index.html">LT</a>
+      <span class="lang-sep">/</span>
+      <a href="type2-podklyuchenie.html" class="lang-active">RU</a>
+    </div>
+  </div>
+</header>
+
+<section class="about guide-section">
+  <div class="container">
+    <h2>Подключение кабеля Type 2 к док‑станции Morek AC</h2>
+    <p>
+      В этом руководстве описано, как подключить зарядный кабель
+      <strong>Type 2</strong> к док‑станции <strong>Morek AC Smart</strong> (версия с кабелем).
+      Все действия выполняются в соответствии с рекомендациями Morek и официальными
+      схемами, представленными в
+      <a href="https://wiki.morek.eu/lt/support/solutions/204000006630" target="_blank">
+        Morek Wiki
+      </a>.
+    </p>
+
+    <!-- 1) Bendras Type 2 kabelio vaizdas -->
+    <img src="IMG_URL_MOREK_T2_CABLE"
+         alt="Зарядный кабель Type 2"
+         class="guide-image">
+    <div class="guide-image-caption">
+      1 рис. Зарядный кабель Type 2.
+    </div>
+
+    <h3>1. Подготовка кабеля</h3>
+    <ol>
+      <li><strong>Проверка длины и сечения</strong><br>
+        Убедитесь, что <strong>длина</strong> и <strong>сечение</strong> кабеля
+        соответствуют мощности зарядной станции и требованиям проекта.
+      </li>
+      <li><strong>Снятие внешней изоляции</strong><br>
+        Снимите внешнюю изоляцию с конца кабеля, который будет подключаться
+        к док‑станции. Оставьте достаточный запас длины для удобного подключения
+        к клеммам.
+      </li>
+      <li><strong>Разделение проводников</strong><br>
+        Аккуратно разделите проводники:
+        <ul>
+          <li>фаза (или несколько фаз L1, L2, L3),</li>
+          <li>нейтраль (N),</li>
+          <li>защитный проводник PE,</li>
+          <li>контрольные провода – <strong>CP</strong> и <strong>PP</strong>, если они используются
+            в данном кабеле (обычно для Type 2 всегда присутствуют).</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- 2) Nuotrauka su nužievintu kabeliu / laidų paruošimu -->
+    <img src="IMG_URL_MOREK_T2_STRIPPED"
+         alt="Подготовленный конец кабеля Type 2"
+         class="guide-image">
+    <div class="guide-image-caption">
+      2 рис. Подготовленный конец кабеля Type 2 с разделёнными проводниками.
+    </div>
+
+    <h3>2. Подключение терминалов внутри станции</h3>
+    <ol>
+      <li><strong>Открытие корпуса базовой станции</strong><br>
+        Откройте корпус базовой станции в соответствии с инструкциями
+        производителя (Morek). Убедитесь, что питание станции
+        <strong>отключено</strong>.
+      </li>
+      <li><strong>Ввод кабеля в корпус</strong><br>
+        Вставьте кабель Type 2 через предназначенное для него
+        <strong>отверстие / кабельный ввод</strong> и
+        <strong>затяните кабельный зажим</strong>, чтобы кабель был
+        надёжно зафиксирован и не мог быть выдёрнут без инструмента.
+      </li>
+    </ol>
+
+    <!-- 3) Nuotrauka su kabelio įvadu į stotelę -->
+    <img src="IMG_URL_MOREK_T2_ENTRY"
+         alt="Ввод кабеля Type 2 в корпус станции"
+         class="guide-image">
+    <div class="guide-image-caption">
+      3 рис. Ввод кабеля Type 2 в корпус станции через кабельный ввод.
+    </div>
+
+    <ol start="3">
+      <li><strong>Подключение силовых проводников</strong><br>
+        Подключите:
+        <ul>
+          <li><strong>фазовые проводники (L1 / L2 / L3)</strong> к соответствующим
+            силовым клеммам,</li>
+          <li><strong>нейтраль (N)</strong> – к клемме N,</li>
+          <li><strong>заземление (PE)</strong> – к клемме PE.</li>
+        </ul>
+      </li>
+      <li><strong>Подключение управляющих проводов</strong><br>
+        Подключите управляющие провода:
+        <ul>
+          <li><strong>CP (Control Pilot)</strong> – к соответствующей управляющей
+            клемме CP,</li>
+          <li><strong>PP (Proximity Pilot)</strong> – к клемме PP (если предусмотрена
+            данной моделью и схемой).</li>
+        </ul>
+        Подключение выполняйте строго по
+        <strong>схеме, предоставленной Morek</strong> для вашей модели станции.
+      </li>
+      <li><strong>Проверка механики и зажима</strong><br>
+        Проверьте, нет ли защемлённых или ослабленных проводов, а также
+        излишнего натяжения проводников в клеммах. При необходимости поправьте
+        укладку кабеля и повторно подтяните зажимы.
+      </li>
+    </ol>
+
+    <!-- 4) Nuotrauka su gnybtais (Type 2 laidų prijungimas stotelės viduje) -->
+    <img src="IMG_URL_MOREK_T2_TERMINALS"
+         alt="Клеммы внутри станции для подключения кабеля Type 2"
+         class="guide-image">
+    <div class="guide-image-caption">
+      4 рис. Клеммы внутри станции для подключения силовых и управляющих проводников
+      кабеля Type 2.
+    </div>
+
+    <h3>3. Фиксация, сборка и тестирование</h3>
+    <ol>
+      <li><strong>Закрытие корпуса станции</strong><br>
+        Закройте корпус базовой станции и зафиксируйте крышку
+        <strong>всеми предусмотренными винтами</strong>. Убедитесь, что корпус плотно
+        прилегает и нет щелей, которые могут привести к попаданию влаги.
+      </li>
+      <li><strong>Проверка фиксации кабеля</strong><br>
+        Убедитесь, что кабель надёжно закреплён кабельным вводом и/или
+        прижимными элементами станции. Кабель не должен быть слишком сильно
+        перегнут или натянут.
+      </li>
+      <li><strong>Тестовая зарядка</strong><br>
+        Включите питание станции, подключите кабель Type 2 к электромобилю
+        и выполните тестовую зарядку. Убедитесь, что:
+        <ul>
+          <li>станция <strong>распознаёт подключенный кабель и автомобиль</strong>,</li>
+          <li>процесс зарядки запускается и не вызывает ошибок,</li>
+          <li>по окончании зарядки кабель можно безопасно отключить.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- 5) Nuotrauka su uždarytu korpusu ir išvestu Type 2 kabeliu -->
+    <img src="IMG_URL_MOREK_T2_FINISHED"
+         alt="Станция Morek с подключённым выходящим кабелем Type 2"
+         class="guide-image">
+    <div class="guide-image-caption">
+      5 рис. Готовый результат: станция Morek с подключённым кабелем Type 2.
+    </div>
+
+    <p style="margin-top:1.5rem;">
+      <a href="index.html">← Вернуться к списку гидов Morek</a>
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      © <span id="year"></span> Руководства по зарядным станциям
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
