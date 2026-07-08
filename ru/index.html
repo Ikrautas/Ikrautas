@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Руководства по установке зарядных станций для электромобилей</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon, jei yra -->
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <!-- Bendri stiliai -->
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <!-- Верхняя панель -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="index.html">Руководства по зарядным станциям</a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="#brands">Производители</a>
+        <a href="#about">О проекте</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+
+      <!-- Переключение языка -->
+      <div class="lang-switch">
+        <a href="../index.html">LT</a>
+        <span class="lang-sep">/</span>
+        <a href="index.html" class="lang-active">RU</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero секция -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Руководства по установке зарядных станций</h1>
+        <p>
+          Пошаговые инструкции по монтажу и настройке популярных зарядных
+          станций для электромобилей: Morek, ABB, Vool, NexBlue и Elinta.
+        </p>
+        <a href="#brands" class="btn-primary">Выбрать производителя</a>
+      </div>
+      <div class="hero-side">
+        <div class="hero-box">
+          <h2>Для электриков и монтажников</h2>
+          <p>
+            Понятные практические инструкции, примеры подключения и советы
+            по настройке, чтобы монтаж был быстрее и безопаснее.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Карточки производителей -->
+  <section id="brands" class="brands">
+    <div class="container">
+      <h2>Выберите производителя</h2>
+      <p class="section-intro">
+        Выберите производителя, чтобы открыть инструкции по установке и
+        конфигурации конкретных моделей зарядных станций.
+      </p>
+
+      <div class="card-grid">
+        <!-- Morek -->
+        <a href="morek/index.html" class="card">
+          <h3>Morek</h3>
+          <p>Руководства по установке и настройке зарядных станций Morek.</p>
+          <span class="card-link">Открыть руководства →</span>
+        </a>
+
+        <!-- ABB -->
+        <a href="abb/index.html" class="card">
+          <h3>ABB</h3>
+          <p>Пошаговый монтаж и конфигурация ABB Terra AC и других решений ABB.</p>
+          <span class="card-link">Открыть руководства →</span>
+        </a>
+
+        <!-- Vool -->
+        <a href="vool/index.html" class="card">
+          <h3>Vool</h3>
+          <p>Установка и настройка домашних и коммерческих зарядных станций Vool.</p>
+          <span class="card-link">Открыть руководства →</span>
+        </a>
+
+        <!-- NexBlue -->
+        <a href="nexblue/index.html" class="card">
+          <h3>NexBlue</h3>
+          <p>Руководства по монтажу, настройке и динамическому управлению мощностью NexBlue.</p>
+          <span class="card-link">Открыть руководства →</span>
+        </a>
+
+        <!-- Elinta -->
+        <a href="elinta/index.html" class="card">
+          <h3>Elinta</h3>
+          <p>HomeBox Slim: монтаж, конфигурация и динамическое управление мощностью (DLM).</p>
+          <span class="card-link">Открыть руководства →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- О проекте -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>О проекте</h2>
+      <p>
+        На этом сайте собраны практические руководства по установке и
+        конфигурации зарядных станций для электромобилей. Информация
+        предназначена для квалифицированных электриков и монтажников.
+        Всегда соблюдайте местные нормативы и официальную документацию
+        производителей оборудования.
+      </p>
+    </div>
+  </section>
+
+  <!-- Контакты / подвал -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h3>Контакты</h3>
+        <p>
+          Если вы нашли неточность в руководствах или хотите предложить
+          улучшения, создайте issue в репозитории GitHub данного проекта.
+        </p>
+      </div>
+      <div class="footer-copy">
+        © <span id="year"></span> Руководства по зарядным станциям
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Текущий год в подвале
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
